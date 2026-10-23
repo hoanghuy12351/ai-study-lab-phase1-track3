@@ -348,5 +348,8 @@ window.PHASE1_LESSONS = [
 
 window.PHASE1_LESSONS.sort((a,b)=>a.day-b.day);
 for (const lesson of window.PHASE1_LESSONS) {
-  lesson.questions.forEach((question,index)=>question.id=`d${lesson.day}-q${index+1}`);
+  lesson.questions.forEach((question,index)=>{
+    question.id=`d${lesson.day}-q${index+1}`;
+    question.source=lesson.deck;
+  });
 }

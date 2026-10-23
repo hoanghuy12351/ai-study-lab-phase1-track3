@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b36">
+  <meta name="description" content="Flashcard, luyện theo chủ đề, tình huống, hướng dẫn tự luận và thi thử cho 13 bài AI Engineering Track 3.">
+  <title>Track 3 Study Lab — AI Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Điều hướng bài học">
+      <button class="brand" id="brand" type="button" aria-label="Về trang tổng quan">
+        <span class="brand-mark" aria-hidden="true">T<span>3</span></span>
+        <span><strong>TRACK THREE</strong><small>AI Engineering Lab</small></span>
+      </button>
+      <nav id="study-nav" class="study-nav" aria-label="Chế độ học"></nav>
+      <div class="sidebar-label">LỘ TRÌNH HỌC</div>
+      <div id="lesson-nav" class="lesson-nav"></div>
+      <div class="sidebar-foot">
+        <div class="foot-icon" aria-hidden="true">↗</div>
+        <p><strong>Học để xây được.</strong><br>Hiểu → Build → Evaluate → Debug → Deploy</p>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-brand" id="mobile-brand" type="button">T3 <span>AI Study Lab</span></button>
+        <div class="topbar-path" id="breadcrumb">Track 3 <span>/</span> Tổng quan</div>
+        <div class="topbar-right"><span class="save-indicator"><span></span> Lưu trên thiết bị này</span><button class="icon-button" id="reset-button" type="button" title="Xóa tiến độ" aria-label="Xóa tiến độ">↺</button></div>
+      </header>
+      <nav class="course-switch" aria-label="Khóa học"><a href="index.html">Phase 1 · Bài 1–15</a><a href="track3.html" aria-current="page">Track 3 · Bài 16–28</a><a href="track3-coverage.html">Nguồn và phạm vi ↗</a></nav>
+      <nav id="mobile-study-nav" class="mobile-study-nav" aria-label="Chế độ học trên điện thoại"></nav>
+      <main id="app" tabindex="-1"></main>
+    </div>
+  </div>
+  <script src="track3-sources.js"></script>
+  <script src="track3-data.js"></script>
+  <script src="lesson-overviews.js"></script>
+  <script src="learning-core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
