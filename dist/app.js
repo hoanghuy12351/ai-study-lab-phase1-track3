@@ -3,44 +3,52 @@
   const course=window.STUDY_COURSE||{label:'Phase 1',lessons:window.PHASE1_LESSONS,flashcards:window.PHASE1_FLASHCARDS,store:'phase1-study-v2',legacyStore:'phase1-ai-quiz-v1'};
   const lessons=course.lessons,L=window.P1Learning;
   const questions=lessons.flatMap(l=>l.questions.map(q=>({...q,day:l.day,lessonTitle:l.title})));
-  const byId=new Map(questions.map(q=>[q.id,q])),cards=course.flashcards;
+  const historical=window.QUESTION_ARCHIVE||[],replacements=window.QUESTION_REPLACEMENTS||{};
+  const byId=new Map([...historical,...questions].map(q=>[q.id,q])),cards=course.flashcards;
+  const reviewKey=id=>replacements[id]||id;
   const STORE=course.store,OLD_STORE=course.legacyStore;
   const app=document.getElementById('app'),nav=document.getElementById('lesson-nav'),breadcrumb=document.getElementById('breadcrumb');
   const read=key=>{try{const v=JSON.parse(localStorage.getItem(key)||'{}');return v&&typeof v==='object'&&!Array.isArray(v)?v:{};}catch{return {};}};
   const saved=read(STORE),data={...saved,runs:saved.runs||{},reviews:saved.reviews||{},cards:saved.cards||{}};
-  const state={screen:'home',day:lessons[0].day,lessonTab:'overview',flowIndex:0,scope:{day:'all',topic:'all',type:'all'},activity:'practice',runId:null,index:0,search:'',cardIndex:0,revealed:false,cardOrder:[],dueOnly:false,reviewFilter:'all',message:''};
+  const state={screen:'home',day:lessons[0].day,lessonTab:'overview',flowIndex:0,scope:{day:'all',topic:'all',type:'all',level:'all'},activity:'practice',runId:null,index:0,search:'',cardIndex:0,revealed:false,cardOrder:[],dueOnly:false,reviewFilter:'all',message:''};
   let timer=null;
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const lesson=day=>lessons.find(l=>l.day===Number(day));
   const run=()=>data.runs[state.runId];
   const runQuestions=s=>(s?.questionIds||[]).map(id=>byId.get(id)).filter(Boolean);
   const pool=()=>questions.filter(q=>L.matches(q,state.scope));
-  const reviewIds=()=>questions.filter(q=>L.needsReview(data.reviews[q.id]));
+  const reviewIds=()=>questions.filter(q=>L.needsReview(data.reviews[reviewKey(q.id)]));
   const persist=()=>{try{localStorage.setItem(STORE,JSON.stringify(data));}catch{const indicator=document.querySelector('.save-indicator');if(indicator)indicator.textContent='Bộ nhớ đầy · chưa lưu được';}};
   const date=value=>new Date(value).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
   const labelType=q=>q.scenario?'TÌNH HUỐNG · TỰ LUẬN':q.type==='essay'?'TỰ LUẬN':q.type==='multi'?'NHIỀU ĐÁP ÁN':'MỘT ĐÁP ÁN';
   const empty=text=>`<div class="empty">${text}</div>`;
   const button=(action,text,extra='',cls='secondary')=>`<button type="button" class="${cls}" data-action="${action}" ${extra}>${text}</button>`;
   const source=q=>`<p class="question-source">Nguồn: ${esc(q.source)}</p>`;
-  const reviewButton=q=>button('bookmark',data.reviews[q.id]?.manual?'★ Đã lưu cần ôn':'☆ Lưu cần ôn',`data-qid="${q.id}" aria-pressed="${Boolean(data.reviews[q.id]?.manual)}"`,'ghost bookmark');
+  const reviewButton=q=>button('bookmark',data.reviews[reviewKey(q.id)]?.manual?'★ Đã lưu cần ôn':'☆ Lưu cần ôn',`data-qid="${q.id}" aria-pressed="${Boolean(data.reviews[reviewKey(q.id)]?.manual)}"`,'ghost bookmark');
+  const versionNotice=s=>runQuestions(s).some(q=>replacements[q.id])?'<div class="notice version-notice">Lượt này dùng câu hỏi trước lần nâng cấp. Nội dung và đáp án cũ được giữ để xem lại; lượt luyện lại sẽ dùng phiên bản mới.</div>':'';
 
   // Giữ lượt làm cũ nguyên trạng và đưa lỗi đã làm vào hàng đợi ôn tập một lần.
   if(!data.migrated){
     for(const [key,old] of Object.entries(OLD_STORE?read(OLD_STORE):{})){
       if(!old||typeof old!=='object'||!old.answers)continue;
       const [day,type]=key.split(':'),l=lesson(day);if(!l)continue;
-      const qs=questions.filter(q=>q.day===l.day&&!q.scenario&&(type==='all'||q.type===type||type==='mc'&&q.type==='multi'));
+      const qs=(historical.length?historical:questions).filter(q=>q.day===l.day&&!q.scenario&&(type==='all'||q.type===type||type==='mc'&&q.type==='multi'));
       const id=`legacy-${key}`;
       data.runs[id]={id,label:`Bài ${day} · Lượt cũ`,style:'test',day:l.day,questionIds:qs.map(q=>q.id),answers:old.answers,submitted:Boolean(old.submitted),createdAt:0};
-      if(old.submitted)for(const q of qs)data.reviews[q.id]=L.updateReview(data.reviews[q.id],q,old.answers[q.id]);
+      if(old.submitted)for(const q of qs)data.reviews[reviewKey(q.id)]=L.updateReview(data.reviews[reviewKey(q.id)],q,old.answers[q.id]);
     }
     data.migrated=true;persist();
+  }
+  // Chuyển cờ cần ôn, giữ nguyên câu/đáp án của lịch sử và không chép điểm sang câu mới.
+  if(window.QUESTION_REVISION&&data.questionRevision!==window.QUESTION_REVISION){
+    for(const [oldId,newId] of Object.entries(replacements))if(data.reviews[oldId])data.reviews[newId]={...data.reviews[oldId],...data.reviews[newId],fromPreviousRevision:true};
+    data.questionRevision=window.QUESTION_REVISION;persist();
   }
   function go(screen){state.screen=screen;state.message='';render();window.scrollTo({top:0,behavior:'instant'});}
   function startRun(qs,style,label,minutes){
     if(!qs.length){state.message='Không có câu phù hợp với bộ lọc này.';render();return;}
     const now=Date.now(),id=`${now}-${Math.random().toString(36).slice(2,8)}`;
-    data.runs[id]={id,label,style,day:state.scope.day,questionIds:qs.map(q=>q.id),answers:{},submitted:false,createdAt:now,deadline:style==='exam'?now+minutes*60000:null,minutes:minutes||null};
+    data.runs[id]={id,label,style,day:state.scope.day,bankRevision:window.QUESTION_REVISION||null,questionIds:qs.map(q=>q.id),answers:{},submitted:false,createdAt:now,deadline:style==='exam'?now+minutes*60000:null,minutes:minutes||null};
     data.activeRun=id;state.runId=id;state.index=0;persist();go('quiz');
   }
   function resume(id){
@@ -53,8 +61,8 @@
     if(!s||s.submitted)return;
     s.submitted=true;s.finishedAt=Date.now();s.timedOut=auto;
     for(const q of runQuestions(s)){
-      data.reviews[q.id]=L.updateReview(data.reviews[q.id],q,s.answers[q.id]);
-      if(s.style!=='practice'&&!L.answered(q,s.answers[q.id]))data.reviews[q.id].unanswered=true;
+      data.reviews[reviewKey(q.id)]=L.updateReview(data.reviews[reviewKey(q.id)],q,s.answers[q.id]);
+      if(s.style!=='practice'&&!L.answered(q,s.answers[q.id]))data.reviews[reviewKey(q.id)].unanswered=true;
     }
     persist();
   }
@@ -93,13 +101,13 @@
       <div class="activity-grid">${[['practice-hub','01','Luyện theo chủ đề','Kiểm tra từng câu và đọc giải thích ngay.'],['flash-hub','02','Flashcard','Tự nhớ trước, mở đáp án sau.'],['exam-hub','03','Thi thử','Đề ngẫu nhiên, đồng hồ và kết quả cuối bài.']].map(([action,n,title,desc])=>`<button class="activity-card" data-action="${action}" type="button"><span>${n}</span><strong>${title} ↗</strong><small>${desc}</small></button>`).join('')}</div>
       <div class="toolbar"><h2 class="section-title">Học theo bài</h2><input id="search" class="search" type="search" placeholder="Tìm bài hoặc chủ đề..." value="${esc(state.search)}" aria-label="Tìm bài hoặc chủ đề"></div><div id="lesson-grid" class="lesson-grid"></div>
       ${recent.length?`<section class="history-panel"><h2 class="section-title">Lượt làm gần đây</h2>${recent.map(s=>`<button data-action="resume" data-id="${s.id}" class="history-row" type="button"><span>${esc(s.label)}<small>${s.createdAt?date(s.createdAt):'Tiến độ giữ từ phiên bản trước'} · ${s.questionIds.length} câu</small></span><strong>${s.submitted?'Xem kết quả →':'Tiếp tục →'}</strong></button>`).join('')}</section>`:''}
-      <div class="notice">Tiến độ lưu trong trình duyệt này. Tự luận dùng checklist tự đánh giá; ứng dụng không tự chấm nội dung bằng AI.</div></div>`;
+      <div class="notice">${questions.filter(q=>q.revision===2).length} câu trắc nghiệm đã nâng cấp theo tình huống. Chọn mức “Vận dụng” khi luyện hoặc thi thử để tập trung câu cần phân tích. Tiến độ lưu trong trình duyệt; tự luận dùng checklist tự đánh giá.</div></div>`;
     renderCards();
   }
   function renderCards(){
     const query=state.search.trim().toLocaleLowerCase('vi');
     const matches=lessons.filter(l=>`${l.title} ${l.summary} ${l.topics.join(' ')}`.toLocaleLowerCase('vi').includes(query));
-    document.getElementById('lesson-grid').innerHTML=matches.length?matches.map(l=>`<article class="lesson-card"><div class="card-top"><span class="day-pill">BÀI ${String(l.day).padStart(2,'0')}</span><span class="card-count">${l.questions.length} CÂU · ${l.topics.length} CHỦ ĐỀ</span></div><h3>${esc(l.title)}</h3><p>${esc(l.summary)}</p><div class="card-bottom">${button('intro','Tổng quan bài →',`data-day="${l.day}"`,'card-link')}<span class="card-progress">${l.questions.filter(q=>L.needsReview(data.reviews[q.id])).length} cần ôn</span></div></article>`).join(''):empty('Không tìm thấy bài phù hợp.');
+    document.getElementById('lesson-grid').innerHTML=matches.length?matches.map(l=>`<article class="lesson-card"><div class="card-top"><span class="day-pill">BÀI ${String(l.day).padStart(2,'0')}</span><span class="card-count">${l.questions.length} CÂU · ${l.topics.length} CHỦ ĐỀ</span></div><h3>${esc(l.title)}</h3><p>${esc(l.summary)}</p><div class="card-bottom">${button('intro','Tổng quan bài →',`data-day="${l.day}"`,'card-link')}<span class="card-progress">${l.questions.filter(q=>L.needsReview(data.reviews[reviewKey(q.id)])).length} cần ôn</span></div></article>`).join(''):empty('Không tìm thấy bài phù hợp.');
   }
   function renderOverview(l){
     const o=window.LESSON_OVERVIEWS[l.day],step=o.flow[Math.min(state.flowIndex,o.flow.length-1)];
@@ -116,7 +124,7 @@
       <nav class="overview-neighbors" aria-label="Bài học liên quan">${before?button('intro',`← Bài ${before.day} · ${esc(before.title)}`,`data-day="${before.day}"`,'ghost'):''}${after?button('intro',`Bài ${after.day} · ${esc(after.title)} →`,`data-day="${after.day}"`,'ghost'):''}</nav></div>`;
   }
   function renderTopics(l){
-    return `<h2 class="section-title spaced">Chọn một chủ đề</h2><div class="topic-grid">${l.topics.map((topic,i)=>{const qs=l.questions.filter(q=>q.topic===topic),n=qs.filter(q=>L.needsReview(data.reviews[q.id])).length;return `<article class="topic-card"><span class="eyebrow">${qs.length} CÂU · ${qs.filter(q=>q.scenario).length} TÌNH HUỐNG</span><h3>${esc(topic)}</h3><p>${n?n+' câu cần ôn':'Bắt đầu bằng flashcard hoặc luyện tình huống.'}</p><div class="action-row">${button('topic-practice','Luyện tập',`data-topic-index="${i}"`,'primary small-button')}${button('topic-flash','Flashcard',`data-topic-index="${i}"`,'secondary small-button')}</div></article>`;}).join('')}</div>`;
+    return `<h2 class="section-title spaced">Chọn một chủ đề</h2><div class="topic-grid">${l.topics.map((topic,i)=>{const qs=l.questions.filter(q=>q.topic===topic),n=qs.filter(q=>L.needsReview(data.reviews[reviewKey(q.id)])).length;return `<article class="topic-card"><span class="eyebrow">${qs.length} CÂU · ${qs.filter(q=>q.scenario).length} TÌNH HUỐNG</span><h3>${esc(topic)}</h3><p>${n?n+' câu cần ôn':'Bắt đầu bằng flashcard hoặc luyện tình huống.'}</p><div class="action-row">${button('topic-practice','Luyện tập',`data-topic-index="${i}"`,'primary small-button')}${button('topic-flash','Flashcard',`data-topic-index="${i}"`,'secondary small-button')}</div></article>`;}).join('')}</div>`;
   }
   function renderIntro(){
     const l=lesson(state.day);breadcrumb.innerHTML=`${esc(course.label)} <span>/</span> Bài ${l.day}`;
@@ -127,11 +135,11 @@
   function scopeControls(withType=true){
     const topics=[...new Set(questions.filter(q=>state.scope.day==='all'||q.day===Number(state.scope.day)).map(q=>q.topic))];
     const options=(rows,selected)=>rows.map(([value,label])=>`<option value="${esc(value)}" ${String(value)===String(selected)?'selected':''}>${esc(label)}</option>`).join('');
-    return `<div class="filter-grid"><label>Bài học<select id="scope-day">${options([['all',`Tất cả ${lessons.length} bài`],...lessons.map(l=>[l.day,`Bài ${l.day} · ${l.title}`])],state.scope.day)}</select></label><label>Chủ đề<select id="scope-topic">${options([['all','Tất cả chủ đề'],...topics.map(t=>[t,t])],state.scope.topic)}</select></label>${withType?`<label>Dạng câu<select id="scope-type">${options([['all','Tất cả dạng câu'],['objective','Trắc nghiệm'],['multi','Chọn nhiều đáp án'],['essay','Tự luận'],['scenario','Tình huống xử lý']],state.scope.type)}</select></label>`:''}</div>`;
+    return `<div class="filter-grid ${withType?'with-level':''}"><label>Bài học<select id="scope-day">${options([['all',`Tất cả ${lessons.length} bài`],...lessons.map(l=>[l.day,`Bài ${l.day} · ${l.title}`])],state.scope.day)}</select></label><label>Chủ đề<select id="scope-topic">${options([['all','Tất cả chủ đề'],...topics.map(t=>[t,t])],state.scope.topic)}</select></label>${withType?`<label>Dạng câu<select id="scope-type">${options([['all','Tất cả dạng câu'],['objective','Trắc nghiệm'],['multi','Chọn nhiều đáp án'],['essay','Tự luận'],['scenario','Tình huống xử lý']],state.scope.type)}</select></label>`:''}<label>Mức tư duy<select id="scope-level">${options([['all','Tất cả mức'],['concept','Hiểu khái niệm'],['apply','Vận dụng · phân tích tình huống']],state.scope.level||'all')}</select></label></div>`;
   }
   function renderStudy(){
     const flash=state.activity==='flashcards',qs=pool();breadcrumb.innerHTML=`${esc(course.label)} <span>/</span> ${flash?'Flashcard':'Luyện theo chủ đề'}`;
-    app.innerHTML=`<div class="page"><div class="eyebrow">${flash?'NHỚ CHỦ ĐỘNG':'HIỂU → THỬ → ĐỐI CHIẾU'}</div><h1 class="h1">${flash?'Flashcard ôn tập':'Luyện tập theo chủ đề'}</h1><p class="lead">${flash?'Đọc câu hỏi, tự trả lời rồi mới mở thẻ. “Chưa nhớ” sẽ đưa câu vào danh sách cần ôn.':'Chọn phạm vi nhỏ để học kỹ. Sau khi kiểm tra mỗi câu, bạn được xem giải thích ngắn; câu sai tự vào “Cần ôn”.'}</p>${scopeControls()}<div class="selection-summary"><strong>${qs.length}</strong> ${flash?'thẻ':'câu'} phù hợp · ${qs.filter(q=>q.scenario).length} tình huống · ${qs.filter(q=>q.type==='essay').length} tự luận</div>${state.message?`<p class="inline-message" role="status">${esc(state.message)}</p>`:''}<div class="action-row">${button(flash?'open-cards':'begin-practice',flash?'Bắt đầu ôn thẻ →':'Bắt đầu luyện →','','primary')}${flash?'<label class="inline-check"><input id="due-only" type="checkbox" '+(state.dueOnly?'checked':'')+'> Chỉ thẻ chưa nhớ hoặc đến hạn</label>':''}</div><div class="notice">${flash?'Thẻ nhớ được hẹn lại sau 1, 3, 7, 14 và 30 ngày. Lịch này chỉ là gợi ý ôn tập.':'Với câu tự luận, hãy mở hướng dẫn và viết theo khung nếu chưa biết bắt đầu. Bài mẫu chỉ mở khi bạn chọn đối chiếu.'}</div></div>`;
+    app.innerHTML=`<div class="page"><div class="eyebrow">${flash?'NHỚ CHỦ ĐỘNG':'HIỂU → THỬ → ĐỐI CHIẾU'}</div><h1 class="h1">${flash?'Flashcard ôn tập':'Luyện tập theo chủ đề'}</h1><p class="lead">${flash?'Đọc câu hỏi, tự trả lời rồi mới mở thẻ. “Chưa nhớ” sẽ đưa câu vào danh sách cần ôn.':'Chọn phạm vi nhỏ để học kỹ. Sau khi kiểm tra mỗi câu, bạn được xem giải thích ngắn; câu sai tự vào “Cần ôn”.'}</p>${scopeControls()}<div class="selection-summary"><strong>${qs.length}</strong> ${flash?'thẻ':'câu'} phù hợp · ${qs.filter(q=>q.scenario).length} tình huống tự luận · ${qs.filter(q=>q.type==='essay').length} tự luận</div>${state.message?`<p class="inline-message" role="status">${esc(state.message)}</p>`:''}<div class="action-row">${button(flash?'open-cards':'begin-practice',flash?'Bắt đầu ôn thẻ →':'Bắt đầu luyện →','','primary')}${flash?'<label class="inline-check"><input id="due-only" type="checkbox" '+(state.dueOnly?'checked':'')+'> Chỉ thẻ chưa nhớ hoặc đến hạn</label>':''}</div><div class="notice">${flash?'Thẻ nhớ được hẹn lại sau 1, 3, 7, 14 và 30 ngày. Lịch này chỉ là gợi ý ôn tập.':'Với câu tự luận, hãy mở hướng dẫn và viết theo khung nếu chưa biết bắt đầu. Bài mẫu chỉ mở khi bạn chọn đối chiếu.'}</div></div>`;
   }
   function selectedCards(){const ids=new Set(pool().map(q=>q.id));return cards.filter(c=>ids.has(c.questionId)&&(!state.dueOnly||!data.cards[c.id]?.known||data.cards[c.id].due<=Date.now()));}
   function openCards(){state.cardOrder=selectedCards().map(c=>c.id);state.cardIndex=0;state.revealed=false;go('flashcards');}
@@ -158,11 +166,13 @@
     const s=run(),qs=runQuestions(s);if(!s||!qs.length){go('home');return;}if(s.submitted){go('result');return;}
     state.index=Math.min(Math.max(state.index,0),qs.length-1);
     const q=qs[state.index],a=s.answers[q.id]||{},practice=s.style==='practice',checked=Boolean(a.checked),locked=practice&&checked;
+    const promptParts=q.prompt.split('\n\n');
+    const questionHeading=promptParts.length>1?`<div class="question-context"><strong>BỐI CẢNH</strong><p>${esc(promptParts[0])}</p></div><h2 class="question-title">${esc(promptParts.slice(1).join('\n\n'))}</h2>`:`<h2 class="question-title">${esc(q.prompt)}</h2>`;
     const count=qs.filter(item=>L.answered(item,s.answers[item.id])).length;
     breadcrumb.innerHTML=`${esc(course.label)} <span>/</span> ${practice?'Luyện tập':s.style==='exam'?'Thi thử':'Bài làm cũ'}`;
-    const options=q.type==='essay'?`${practice?guide(q):''}<label class="field-label" for="essay-answer">Bài làm của bạn</label><textarea id="essay-answer" class="essay-input" ${locked?'readonly':''} placeholder="Viết cách xử lý và cách kiểm chứng...">${esc(a.text||'')}</textarea>${practice?'':'<p class="essay-hint">Gợi ý và bài mẫu sẽ mở sau khi nộp.</p>'}`:`${q.type==='multi'?'<div class="multi-hint">Chọn tất cả đáp án đúng, sau đó kiểm tra. Chọn thiếu hoặc thừa được tính sai.</div>':''}<div class="options" role="group" aria-label="Các phương án trả lời">${L.shuffle(q.options.map((_,i)=>i),q.id).map((original,pos)=>{const selected=q.type==='multi'?(a.choices||[]).includes(original):a.choice===original;return `<button type="button" class="option ${selected?'selected':''}" data-action="choose" data-choice="${original}" aria-pressed="${selected}" ${locked?'disabled':''}><span class="letter">${q.type==='multi'?(selected?'✓':'□'):String.fromCharCode(65+pos)}</span><span>${esc(q.options[original])}</span></button>`;}).join('')}</div>`;
-    app.innerHTML=`<div class="page"><div class="run-header"><div><div class="eyebrow">${practice?'LUYỆN TẬP · GIẢI THÍCH SAU MỖI CÂU':'THI THỬ · ĐÁP ÁN ĐANG ẨN'}</div><h1>${esc(s.label)}</h1></div>${s.style==='exam'?'<div class="clock-box">Còn lại <strong id="exam-clock" aria-label="Thời gian còn lại">--:--</strong></div>':button('home','Lưu và về tổng quan','','ghost')}</div><div class="quiz-layout"><section class="quiz-card"><div class="question-meta"><span class="type-pill ${q.type==='essay'?'essay':q.type==='multi'?'multi':''}">${labelType(q)}</span><span class="q-index">CÂU ${state.index+1} / ${qs.length} · BÀI ${q.day} · ${esc(q.topic)}</span></div><h2 class="question-title">${esc(q.prompt)}</h2>${reviewButton(q)}${options}${state.message?`<p class="inline-message" role="alert">${esc(state.message)}</p>`:''}${practice&&checked?`<div class="immediate-feedback" role="status">${renderAnswer(q,state.index,a,true)}</div>`:''}<div class="question-actions">${button('prev','← Câu trước',state.index===0?'disabled':'','ghost')}${practice&&!checked?button('check-answer',q.type==='essay'?'Đối chiếu bài tự luận':'Kiểm tra đáp án','','primary'):state.index===qs.length-1?button('submit','Nộp bài →','','primary'):button('next','Câu tiếp →','','primary')}</div>${practice&&!checked?button('next','Bỏ qua, quay lại sau →',state.index===qs.length-1?'disabled':'','ghost skip-link'):''}</section>
-      <aside class="rail-card"><h3>Tiến độ bài làm</h3><p id="answer-count">${count} / ${qs.length} câu đã nhập</p><div class="progress-track"><div id="answer-progress" style="width:${Math.round(count/qs.length*100)}%"></div></div><div class="question-map">${qs.map((item,i)=>`<button class="map-btn ${i===state.index?'current':''} ${L.answered(item,s.answers[item.id])?'answered':''} ${data.reviews[item.id]?.manual?'flagged':''}" type="button" data-action="goto" data-index="${i}" aria-label="Câu ${i+1}${data.reviews[item.id]?.manual?', đã lưu cần ôn':''}">${i+1}</button>`).join('')}</div><p class="rail-note">${practice?'Kiểm tra đáp án để xem giải thích và học từ lỗi.':'Đồng hồ vẫn chạy khi rời trang. Chỉ mở đáp án sau khi nộp.'}</p>${button('submit',practice?'Kết thúc lượt luyện':'Nộp bài thi','','secondary full-width')}${s.style==='exam'?button('home','Lưu và rời bài','','ghost full-width'):''}</aside></div></div>`;
+    const options=q.type==='essay'?`${practice?guide(q):''}<label class="field-label" for="essay-answer">Bài làm của bạn</label><textarea id="essay-answer" class="essay-input" ${locked?'readonly':''} placeholder="Viết cách xử lý và cách kiểm chứng...">${esc(a.text||'')}</textarea>${practice?'':'<p class="essay-hint">Gợi ý và bài mẫu sẽ mở sau khi nộp.</p>'}`:`${q.type==='multi'?'<div class="multi-hint">Chọn tất cả đáp án đúng, sau đó kiểm tra. Chọn thiếu hoặc thừa được tính sai.</div>':''}<div class="options" role="group" aria-label="Các phương án trả lời">${L.shuffle(q.options.map((_,i)=>i),`${s.id}:${q.id}`).map((original,pos)=>{const selected=q.type==='multi'?(a.choices||[]).includes(original):a.choice===original;return `<button type="button" class="option ${selected?'selected':''}" data-action="choose" data-choice="${original}" aria-pressed="${selected}" ${locked?'disabled':''}><span class="letter">${q.type==='multi'?(selected?'✓':'□'):String.fromCharCode(65+pos)}</span><span>${esc(q.options[original])}</span></button>`;}).join('')}</div>`;
+    app.innerHTML=`<div class="page"><div class="run-header"><div><div class="eyebrow">${practice?'LUYỆN TẬP · GIẢI THÍCH SAU MỖI CÂU':'THI THỬ · ĐÁP ÁN ĐANG ẨN'}</div><h1>${esc(s.label)}</h1></div>${s.style==='exam'?'<div class="clock-box">Còn lại <strong id="exam-clock" aria-label="Thời gian còn lại">--:--</strong></div>':button('home','Lưu và về tổng quan','','ghost')}</div>${versionNotice(s)}<div class="quiz-layout"><section class="quiz-card"><div class="question-meta"><span class="type-pill ${q.type==='essay'?'essay':q.type==='multi'?'multi':''}">${labelType(q)}</span><span class="level-pill">${q.level==='apply'?'VẬN DỤNG':'HIỂU KHÁI NIỆM'}</span><span class="q-index">CÂU ${state.index+1} / ${qs.length} · BÀI ${q.day} · ${esc(q.topic)}</span></div>${questionHeading}${reviewButton(q)}${options}${state.message?`<p class="inline-message" role="alert">${esc(state.message)}</p>`:''}${practice&&checked?`<div class="immediate-feedback" role="status">${renderAnswer(q,state.index,a,true)}</div>`:''}<div class="question-actions">${button('prev','← Câu trước',state.index===0?'disabled':'','ghost')}${practice&&!checked?button('check-answer',q.type==='essay'?'Đối chiếu bài tự luận':'Kiểm tra đáp án','','primary'):state.index===qs.length-1?button('submit','Nộp bài →','','primary'):button('next','Câu tiếp →','','primary')}</div>${practice&&!checked?button('next','Bỏ qua, quay lại sau →',state.index===qs.length-1?'disabled':'','ghost skip-link'):''}</section>
+      <aside class="rail-card"><h3>Tiến độ bài làm</h3><p id="answer-count">${count} / ${qs.length} câu đã nhập</p><div class="progress-track"><div id="answer-progress" style="width:${Math.round(count/qs.length*100)}%"></div></div><div class="question-map">${qs.map((item,i)=>`<button class="map-btn ${i===state.index?'current':''} ${L.answered(item,s.answers[item.id])?'answered':''} ${data.reviews[reviewKey(item.id)]?.manual?'flagged':''}" type="button" data-action="goto" data-index="${i}" aria-label="Câu ${i+1}${data.reviews[reviewKey(item.id)]?.manual?', đã lưu cần ôn':''}">${i+1}</button>`).join('')}</div><p class="rail-note">${practice?'Kiểm tra đáp án để xem giải thích và học từ lỗi.':'Đồng hồ vẫn chạy khi rời trang. Chỉ mở đáp án sau khi nộp.'}</p>${button('submit',practice?'Kết thúc lượt luyện':'Nộp bài thi','','secondary full-width')}${s.style==='exam'?button('home','Lưu và rời bài','','ghost full-width'):''}</aside></div></div>`;
   }
   function renderAnswer(q,index,a,inline=false){
     if(q.type!=='essay'){
@@ -178,19 +188,19 @@
     const right=objective.filter(q=>L.correct(q,s.answers[q.id])).length,done=essays.filter(q=>L.essayDone(q,s.answers[q.id])).length;
     breadcrumb.innerHTML=`${esc(course.label)} <span>/</span> Kết quả`;
     const topics=[...new Set(qs.map(q=>`${q.day}|${q.topic}`))];
-    app.innerHTML=`<div class="page"><div class="result-head"><div><div class="eyebrow">${s.timedOut?'HẾT GIỜ · ĐÃ TỰ NỘP':'ĐÃ HOÀN THÀNH LƯỢT LÀM'}</div><h1 class="h1">Kết quả và điều cần ôn</h1><p class="lead">${esc(s.label)}</p></div>${button('retry-run','Luyện lại bộ câu này','','primary')}</div><div class="score-grid"><div class="score-box"><strong>${right}/${objective.length}</strong><span>Trắc nghiệm đúng${objective.length?` · ${Math.round(right/objective.length*100)}%`:''}</span></div><div class="score-box"><strong id="essay-score">${done}/${essays.length}</strong><span>Tự luận tự xác nhận đủ ý</span></div><div class="score-box"><strong>${topics.length}</strong><span>Chủ đề xuất hiện trong lượt này</span></div></div><div class="action-row">${button('review','Mở câu cần ôn →')}${button('home','Về tổng quan','','ghost')}</div><div class="coverage-card"><h2>Theo chủ đề</h2><div class="topic-list">${topics.map(key=>{const [day,topic]=key.split('|'),items=qs.filter(q=>q.day===Number(day)&&q.topic===topic),ok=items.every(q=>q.type==='essay'?L.essayDone(q,s.answers[q.id]):L.correct(q,s.answers[q.id]));return `<span class="topic ${ok?'done':'warn'}"><span class="dot"></span>B${day} · ${esc(topic)}</span>`;}).join('')}</div></div><h2 class="section-title spaced">Giải thích từng câu</h2><div class="result-list">${qs.map((q,i)=>renderAnswer(q,i,s.answers[q.id]||{})).join('')}</div></div>`;
+    app.innerHTML=`<div class="page"><div class="result-head"><div><div class="eyebrow">${s.timedOut?'HẾT GIỜ · ĐÃ TỰ NỘP':'ĐÃ HOÀN THÀNH LƯỢT LÀM'}</div><h1 class="h1">Kết quả và điều cần ôn</h1><p class="lead">${esc(s.label)}</p></div>${button('retry-run','Luyện lại bộ câu này','','primary')}</div>${versionNotice(s)}<div class="score-grid"><div class="score-box"><strong>${right}/${objective.length}</strong><span>Trắc nghiệm đúng${objective.length?` · ${Math.round(right/objective.length*100)}%`:''}</span></div><div class="score-box"><strong id="essay-score">${done}/${essays.length}</strong><span>Tự luận tự xác nhận đủ ý</span></div><div class="score-box"><strong>${topics.length}</strong><span>Chủ đề xuất hiện trong lượt này</span></div></div><div class="action-row">${button('review','Mở câu cần ôn →')}${button('home','Về tổng quan','','ghost')}</div><div class="coverage-card"><h2>Theo chủ đề</h2><div class="topic-list">${topics.map(key=>{const [day,topic]=key.split('|'),items=qs.filter(q=>q.day===Number(day)&&q.topic===topic),ok=items.every(q=>q.type==='essay'?L.essayDone(q,s.answers[q.id]):L.correct(q,s.answers[q.id]));return `<span class="topic ${ok?'done':'warn'}"><span class="dot"></span>B${day} · ${esc(topic)}</span>`;}).join('')}</div></div><h2 class="section-title spaced">Giải thích từng câu</h2><div class="result-list">${qs.map((q,i)=>renderAnswer(q,i,s.answers[q.id]||{})).join('')}</div></div>`;
   }
   function renderReview(){
     breadcrumb.innerHTML=`${esc(course.label)} <span>/</span> Câu cần ôn`;
-    const items=reviewIds().filter(q=>L.matches(q,{...state.scope,type:'all'})).filter(q=>state.reviewFilter==='all'||data.reviews[q.id]?.[state.reviewFilter]);
-    app.innerHTML=`<div class="page"><div class="eyebrow">HỌC TỪ LỖI VÀ ĐIỀU CHƯA CHẮC</div><h1 class="h1">Câu cần ôn</h1><p class="lead">Câu trắc nghiệm sai, tự luận chưa tự xác nhận đủ ý và thẻ chưa nhớ sẽ xuất hiện ở đây. Bạn cũng có thể chủ động lưu câu bất kỳ.</p>${scopeControls(false)}<label class="review-filter">Lý do cần ôn<select id="review-filter">${[['all','Tất cả'],['wrong','Trả lời sai'],['unanswered','Chưa trả lời trong đề'],['manual','Chủ động lưu'],['essayPending','Tự luận chưa đủ ý'],['card','Flashcard chưa nhớ']].map(([value,title])=>`<option value="${value}" ${state.reviewFilter===value?'selected':''}>${title}</option>`).join('')}</select></label><div class="action-row spaced"><strong>${items.length} câu trong bộ lọc</strong>${button('practice-review','Luyện các câu này →',items.length?'':'disabled','primary')}</div>${items.length?`<div class="review-list">${items.map(q=>{const r=data.reviews[q.id],reasons=[r.wrong?'Trả lời sai':'',r.unanswered?'Chưa trả lời trong đề':'',r.manual?'Đã lưu':'',r.essayPending?'Tự luận chưa đủ ý':'',r.card?'Thẻ chưa nhớ':''].filter(Boolean);return `<article class="topic-card"><div class="eyebrow">BÀI ${q.day} · ${esc(q.topic)}</div><h3>${esc(q.prompt)}</h3><p>${reasons.join(' · ')}</p><div class="action-row">${button('practice-one','Luyện câu này',`data-qid="${q.id}"`,'secondary small-button')}${button('clear-review','Đã ôn · bỏ khỏi danh sách',`data-qid="${q.id}"`,'ghost small-button')}</div></article>`;}).join('')}</div>`:empty('Không còn câu cần ôn trong phạm vi này. Bạn có thể chọn một chủ đề khác hoặc thi thử.')}</div>`;
+    const items=reviewIds().filter(q=>L.matches(q,{...state.scope,type:'all'})).filter(q=>state.reviewFilter==='all'||data.reviews[reviewKey(q.id)]?.[state.reviewFilter]);
+    app.innerHTML=`<div class="page"><div class="eyebrow">HỌC TỪ LỖI VÀ ĐIỀU CHƯA CHẮC</div><h1 class="h1">Câu cần ôn</h1><p class="lead">Câu trắc nghiệm sai, tự luận chưa tự xác nhận đủ ý và thẻ chưa nhớ sẽ xuất hiện ở đây. Bạn cũng có thể chủ động lưu câu bất kỳ.</p>${scopeControls(false)}<label class="review-filter">Lý do cần ôn<select id="review-filter">${[['all','Tất cả'],['wrong','Trả lời sai'],['unanswered','Chưa trả lời trong đề'],['manual','Chủ động lưu'],['essayPending','Tự luận chưa đủ ý'],['card','Flashcard chưa nhớ']].map(([value,title])=>`<option value="${value}" ${state.reviewFilter===value?'selected':''}>${title}</option>`).join('')}</select></label><div class="action-row spaced"><strong>${items.length} câu trong bộ lọc</strong>${button('practice-review','Luyện các câu này →',items.length?'':'disabled','primary')}</div>${items.length?`<div class="review-list">${items.map(q=>{const r=data.reviews[reviewKey(q.id)],reasons=[r.wrong?'Trả lời sai':'',r.unanswered?'Chưa trả lời trong đề':'',r.manual?'Đã lưu':'',r.essayPending?'Tự luận chưa đủ ý':'',r.card?'Thẻ chưa nhớ':''].filter(Boolean);return `<article class="topic-card"><div class="eyebrow">BÀI ${q.day} · ${esc(q.topic)}</div><h3>${esc(q.prompt)}</h3><p>${reasons.join(' · ')}</p><div class="action-row">${button('practice-one','Luyện câu này',`data-qid="${q.id}"`,'secondary small-button')}${button('clear-review','Đã ôn · bỏ khỏi danh sách',`data-qid="${q.id}"`,'ghost small-button')}</div></article>`;}).join('')}</div>`:empty('Không còn câu cần ôn trong phạm vi này. Bạn có thể chọn một chủ đề khác hoặc thi thử.')}</div>`;
   }
   function render(){
     renderNav();
     if(state.screen==='home')renderHome();else if(state.screen==='intro')renderIntro();else if(state.screen==='study')renderStudy();else if(state.screen==='flashcards')renderFlashcards();else if(state.screen==='exam-setup')renderExamSetup();else if(state.screen==='quiz')renderQuiz();else if(state.screen==='result')renderResult();else if(state.screen==='review')renderReview();
     startClock();
   }
-  function scopeLabel(){return `${state.scope.day==='all'?`Toàn ${course.label}`:`Bài ${state.scope.day}`}${state.scope.topic==='all'?'':` · ${state.scope.topic}`}`;}
+  function scopeLabel(){return `${state.scope.day==='all'?`Toàn ${course.label}`:`Bài ${state.scope.day}`}${state.scope.topic==='all'?'':` · ${state.scope.topic}`}${state.scope.level==='apply'?' · Vận dụng':state.scope.level==='concept'?' · Hiểu khái niệm':''}`;}
   function hub(activity){state.activity=activity;state.scope.type='all';go(activity==='exam'?'exam-setup':'study');}
   document.addEventListener('click',event=>{
     const b=event.target.closest('button[data-action]');if(!b||b.disabled)return;
@@ -205,8 +215,8 @@
     if(action==='review')return go('review');
     if(action==='resume')return resume(b.dataset.id);
     if(action==='back-study')return go('study');
-    if(action.startsWith('lesson-')){state.scope={day:b.dataset.day,topic:'all',type:'all'};return hub(action==='lesson-flash'?'flashcards':action==='lesson-exam'?'exam':'practice');}
-    if(action==='topic-practice'||action==='topic-flash'){state.scope={day:String(state.day),topic:lesson(state.day).topics[Number(b.dataset.topicIndex)],type:'all'};return hub(action==='topic-flash'?'flashcards':'practice');}
+    if(action.startsWith('lesson-')){state.scope={day:b.dataset.day,topic:'all',type:'all',level:'all'};return hub(action==='lesson-flash'?'flashcards':action==='lesson-exam'?'exam':'practice');}
+    if(action==='topic-practice'||action==='topic-flash'){state.scope={day:String(state.day),topic:lesson(state.day).topics[Number(b.dataset.topicIndex)],type:'all',level:'all'};return hub(action==='topic-flash'?'flashcards':'practice');}
     if(action==='begin-practice')return startRun(pool(),'practice',scopeLabel());
     if(action==='open-cards')return openCards();
     if(action==='reveal-card'){state.revealed=true;return render();}
@@ -227,21 +237,21 @@
     }
     if(action==='bookmark'){
       const q=byId.get(b.dataset.qid);if(!q)return;
-      data.reviews[q.id]={...data.reviews[q.id],manual:!data.reviews[q.id]?.manual};persist();return render();
+      data.reviews[reviewKey(q.id)]={...data.reviews[reviewKey(q.id)],manual:!data.reviews[reviewKey(q.id)]?.manual};persist();return render();
     }
     if(action==='clear-review'){data.reviews[b.dataset.qid]={};persist();return render();}
     if(action==='practice-one'){const q=byId.get(b.dataset.qid);if(q)return startRun([q],'practice',`Ôn lại · ${q.topic}`);return;}
     if(action==='practice-review'){
-      const qs=reviewIds().filter(q=>L.matches(q,{...state.scope,type:'all'})).filter(q=>state.reviewFilter==='all'||data.reviews[q.id]?.[state.reviewFilter]);
+      const qs=reviewIds().filter(q=>L.matches(q,{...state.scope,type:'all'})).filter(q=>state.reviewFilter==='all'||data.reviews[reviewKey(q.id)]?.[state.reviewFilter]);
       return startRun(qs,'practice','Ôn các câu cần củng cố');
     }
     const s=run();if(!s)return;
-    if(action==='retry-run')return startRun(runQuestions(s),'practice',`Luyện lại · ${s.label}`);
+    if(action==='retry-run')return startRun(runQuestions(s).map(q=>byId.get(reviewKey(q.id))),'practice',`Luyện lại · ${s.label}`);
     if(s.submitted)return;
     if(s.style==='exam'&&Date.now()>=s.deadline)return finish(true);
     const qs=runQuestions(s),q=qs[state.index],a=s.answers[q.id]||(s.answers[q.id]={});
     if(action==='choose'){
-      if(s.style==='practice'&&a.checked)return;const choice=Number(b.dataset.choice);
+      if(s.style==='practice'&&a.checked)return;const choice=Number(b.dataset.choice);if(!Number.isInteger(choice)||choice<0||choice>=q.options.length)return;
       if(q.type==='multi'){const set=new Set(a.choices||[]);set.has(choice)?set.delete(choice):set.add(choice);a.choices=[...set];}else a.choice=choice;
       persist();return render();
     }
@@ -251,9 +261,9 @@
     }
     if(action==='check-answer'){
       if(!L.answered(q,a)||q.type==='essay'&&a.text.trim()===L.template(q)){state.message='Hãy viết hoặc chọn câu trả lời của bạn trước khi đối chiếu.';return render();}
-      a.checked=true;data.reviews[q.id]=L.updateReview(data.reviews[q.id],q,a);persist();return render();
+      a.checked=true;data.reviews[reviewKey(q.id)]=L.updateReview(data.reviews[reviewKey(q.id)],q,a);persist();return render();
     }
-    if(action==='revise-essay'){a.checked=false;a.rubric=[];data.reviews[q.id]=L.updateReview(data.reviews[q.id],q,a);persist();return render();}
+    if(action==='revise-essay'){a.checked=false;a.rubric=[];data.reviews[reviewKey(q.id)]=L.updateReview(data.reviews[reviewKey(q.id)],q,a);persist();return render();}
     if(action==='prev'||action==='next'||action==='goto'){state.index=action==='goto'?Number(b.dataset.index):state.index+(action==='next'?1:-1);render();window.scrollTo({top:0,behavior:'instant'});return;}
     if(action==='submit'){
       const missing=qs.filter(item=>!L.answered(item,s.answers[item.id])).length;
@@ -276,12 +286,13 @@
     if(el.id==='scope-day'){state.scope.day=el.value;state.scope.topic='all';return render();}
     if(el.id==='scope-topic'){state.scope.topic=el.value;return render();}
     if(el.id==='scope-type'){state.scope.type=el.value;return render();}
+    if(el.id==='scope-level'){state.scope.level=el.value;return render();}
     if(el.id==='due-only'){state.dueOnly=el.checked;return;}
     if(el.id==='review-filter'){state.reviewFilter=el.value;return render();}
     if(el.matches('input[data-rubric]')){
       const s=run(),q=byId.get(el.dataset.qid);if(!s||!q||!s.submitted&&!(s.style==='practice'&&s.answers[q.id]?.checked))return;
       const a=s.answers[q.id]||(s.answers[q.id]={});if(!a.text?.trim())return;
-      const set=new Set(a.rubric||[]),i=Number(el.dataset.rubric);el.checked?set.add(i):set.delete(i);a.rubric=[...set];data.reviews[q.id]=L.updateReview(data.reviews[q.id],q,a);persist();
+      const set=new Set(a.rubric||[]),i=Number(el.dataset.rubric);el.checked?set.add(i):set.delete(i);a.rubric=[...set];data.reviews[reviewKey(q.id)]=L.updateReview(data.reviews[reviewKey(q.id)],q,a);persist();
       const pass=L.essayDone(q,a),badge=document.querySelector(`[data-badge="${q.id}"]`);if(badge){badge.textContent=pass?'✓ Tự xác nhận đủ ý':'Chưa tự xác nhận đủ ý';badge.classList.toggle('pending',!pass);}
       const score=document.getElementById('essay-score');if(score&&state.screen==='result'){const essays=runQuestions(s).filter(x=>x.type==='essay');score.textContent=`${essays.filter(x=>L.essayDone(x,s.answers[x.id])).length}/${essays.length}`;}
       if(state.screen==='result')renderResult();renderNav();

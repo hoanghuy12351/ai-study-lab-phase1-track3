@@ -36,6 +36,8 @@ Index tạo danh mục trang và checksum; validator kiểm cấu trúc, đáp �
 
 ## Các chế độ học
 
+- **Ngân hàng reasoning v2:** đã viết lại 390 trắc nghiệm (120 Phase 1, 270 Track 3), gồm toàn bộ 332 câu chọn nhiều, với bối cảnh và nhiễu cùng miền. Chọn nhiều có 4–5 lựa chọn, 2–4 đáp án đúng. Cả 323 chủ đề có trắc nghiệm vận dụng. Lọc **Mức tư duy → Vận dụng** để tập trung câu cần phân tích. [Phạm vi, nguyên tắc và kiểm tra](docs/question-quality-v2.md).
+- **Lịch sử trước nâng cấp:** ID và định nghĩa cũ được giữ để chấm đúng lượt cũ; luyện lại dùng câu mới. Không chuyển đáp án hoặc trạng thái đã nhớ của câu cũ thành điểm cho câu mới.
 - **Tổng quan kiến thức từng bài (đủ 28 bài):** từ trang chủ bấm “Tổng quan bài” hoặc chọn bài ở sidebar. Phần này gồm bản chất, mục tiêu học, luồng 5 bước bấm được kèm giải thích/đầu ra, Must know / Should know / Nice to know, ví dụ xuyên suốt, điểm dễ nhầm và câu hỏi tự giải thích có gợi ý. “Luyện ý này” mở đúng chủ đề; thẻ “Chủ đề luyện tập” giữ toàn bộ danh sách chủ đề của bài. Nội dung nằm trong `dist/lesson-overviews.js`; không tự đánh dấu đã hiểu hay cộng điểm.
 - **Luyện theo chủ đề:** lọc bài, chủ đề và dạng câu. Trắc nghiệm mở giải thích ngay sau khi bấm kiểm tra; đáp án đã kiểm tra được khóa trong lượt đó.
 - **Hướng dẫn tự luận:** hiểu yêu cầu → gợi ý dàn ý → chèn khung để tự viết. Sau khi thử trả lời, mở bài mẫu và checklist; có thể sửa lại bài khi luyện tập.
@@ -57,6 +59,7 @@ node scripts/validate-content.cjs
 node scripts/audit-sources.cjs
 node scripts/smoke-ui.cjs
 node scripts/validate-overviews.cjs
+node scripts/validate-question-quality.cjs
 python -m http.server 4173 --directory dist --bind 127.0.0.1
 ```
 

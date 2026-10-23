@@ -1,6 +1,6 @@
 // Báo cáo truy nguồn; số trang có tham chiếu không phải thước đo bao phủ mọi dữ kiện.
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-global.window={};require('../dist/track3-sources.js');require('../dist/track3-data.js');
+global.window={};require('../dist/track3-sources.js');require('../dist/track3-data.js');require('../dist/question-revisions.js');
 const root=path.join(__dirname,'../..'),site=path.join(__dirname,'..');
 const sources=JSON.parse(fs.readFileSync(path.join(site,'docs/track3-sources.json'),'utf8'));
 const lessons=window.TRACK3_LESSONS,questions=lessons.flatMap(l=>l.questions),units=window.TRACK3_COVERAGE;

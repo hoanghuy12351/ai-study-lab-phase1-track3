@@ -4,6 +4,7 @@ const path=require('node:path');
 global.window={};
 require('../dist/track3-sources.js');
 require('../dist/track3-data.js');
+require('../dist/question-revisions.js');
 const {TRACK3_LESSONS:lessons,TRACK3_COVERAGE:units,STUDY_COURSE:course}=window;
 const inventory=JSON.parse(fs.readFileSync(path.join(__dirname,'../docs/track3-sources.json'),'utf8'));
 const sources=new Map(inventory.map(s=>[s.id,s]));
@@ -43,12 +44,12 @@ for(const l of lessons){
       assert.ok(q.scenario && q.sample && q.rubric.length>=4);
       assert.ok(q.guide?.situation && q.guide.steps.length>=3 && q.guide.verify);
     }else{
-      assert.equal(q.options.length,4);assert.equal(new Set(q.options).size,4);
+      assert.ok(q.options.length>=4&&q.options.length<=5);assert.equal(new Set(q.options).size,q.options.length);
       assert.ok(q.why);
       const answers=q.type==='multi'?q.answers:[q.answer];
-      assert.ok(answers.every(i=>Number.isInteger(i)&&i>=0&&i<4));
+      assert.ok(answers.every(i=>Number.isInteger(i)&&i>=0&&i<q.options.length));
       assert.equal(new Set(answers).size,answers.length);
-      if(q.type==='multi')assert.ok(answers.length>=2&&answers.length<=3);
+      if(q.type==='multi')assert.ok(answers.length>=2&&answers.length<q.options.length);
     }
   }
 }

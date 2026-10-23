@@ -6,6 +6,7 @@ global.window = {};
 require('../dist/questions.js');
 require('../dist/extra-questions.js');
 require('../dist/learning-content.js');
+require('../dist/question-revisions.js');
 
 const root = path.resolve(__dirname, '../..');
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'slides/k4p1/.slides.json'), 'utf8'));

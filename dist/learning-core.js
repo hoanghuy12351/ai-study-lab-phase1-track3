@@ -4,7 +4,7 @@
   const essayDone=(q,a)=>q.type==='essay'&&Boolean(a?.text?.trim())&&q.rubric.every((_,i)=>a.rubric?.includes(i));
   function hash(text){let n=2166136261;for(const c of String(text)){n^=c.charCodeAt(0);n=Math.imul(n,16777619);}return n>>>0;}
   function shuffle(items,seed){const a=[...items];let n=hash(seed)||1;for(let i=a.length-1;i>0;i--){n^=n<<13;n^=n>>>17;n^=n<<5;const j=(n>>>0)%(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
-  function matches(q,scope){return (scope.day==='all'||q.day===Number(scope.day))&&(scope.topic==='all'||q.topic===scope.topic)&&(scope.type==='all'||scope.type==='objective'&&q.type!=='essay'||scope.type==='scenario'&&q.scenario||scope.type===q.type);}
+  function matches(q,scope){return (scope.day==='all'||q.day===Number(scope.day))&&(scope.topic==='all'||q.topic===scope.topic)&&(!scope.level||scope.level==='all'||q.level===scope.level)&&(scope.type==='all'||scope.type==='objective'&&q.type!=='essay'||scope.type==='scenario'&&q.scenario||scope.type===q.type);}
   // Rút luân phiên từng chủ đề để tránh đề bị chi phối bởi bài nhiều câu.
   function balanced(questions,count,seed){
     const groups=new Map();for(const q of shuffle(questions,seed)){const key=`${q.day}:${q.topic}`;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(q);}

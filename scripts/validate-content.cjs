@@ -6,6 +6,7 @@ global.window = {};
 require('../dist/questions.js');
 require('../dist/extra-questions.js');
 require('../dist/learning-content.js');
+require('../dist/question-revisions.js');
 const lessons = window.PHASE1_LESSONS;
 assert.equal(lessons.length, 15, 'Phase 1 phải có 15 bài');
 assert.deepEqual(lessons.map(x => x.day), Array.from({length:15},(_,i)=>i+1));
@@ -26,11 +27,11 @@ for (const lesson of lessons) {
       assert.ok(Number.isInteger(q.answer) && q.answer>=0 && q.answer<4);
       assert.ok(q.why);
     } else if (q.type==='multi') {
-      assert.equal(q.options.length,4, `Số lựa chọn sai ở ${q.id}`);
-      assert.equal(new Set(q.options).size,4, `Lựa chọn trùng ở ${q.id}`);
-      assert.ok(q.answers.length>=2 && q.answers.length<4, `Số đáp án đúng sai ở ${q.id}`);
+      assert.ok(q.options.length>=4 && q.options.length<=5, `Số lựa chọn sai ở ${q.id}`);
+      assert.equal(new Set(q.options).size,q.options.length, `Lựa chọn trùng ở ${q.id}`);
+      assert.ok(q.answers.length>=2 && q.answers.length<q.options.length, `Số đáp án đúng sai ở ${q.id}`);
       assert.equal(new Set(q.answers).size,q.answers.length, `Đáp án đúng trùng ở ${q.id}`);
-      assert.ok(q.answers.every(n=>Number.isInteger(n)&&n>=0&&n<4), `Chỉ số đáp án sai ở ${q.id}`);
+      assert.ok(q.answers.every(n=>Number.isInteger(n)&&n>=0&&n<q.options.length), `Chỉ số đáp án sai ở ${q.id}`);
       assert.ok(q.why, `Thiếu giải thích ở ${q.id}`);
     } else {
       assert.equal(q.type,'essay', `Dạng câu sai ở ${q.id}`);

@@ -278,291 +278,291 @@ Số bài theo buổi giảng thực tế, không theo Dxx của thư mục (ví
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Giới hạn ReAct | t3-d16-u1-m, t3-d16-u1-s | t3-d01-material_mupd8a27_gjug33: 5–9; t3-d01-material_mupd88yw_931iwr: 5–9 |
-| Vòng Reflexion | t3-d16-u2-m, t3-d16-u2-s, t3-d16-q1 | t3-d01-material_mupd8a27_gjug33: 11–18; t3-d01-material_mupd88yw_931iwr: 11–18 |
-| Evaluator có cấu trúc | t3-d16-u3-m, t3-d16-u3-s | t3-d01-material_mupd8a27_gjug33: 15–17; t3-d01-material_mupd88yw_931iwr: 15, 27 |
-| Reflection memory | t3-d16-u4-m, t3-d16-u4-s | t3-d01-material_mupd8a27_gjug33: 16–18; t3-d01-material_mupd88yw_931iwr: 16, 28 |
-| LATS và tìm kiếm | t3-d16-u5-m, t3-d16-u5-s | t3-d01-material_mupd8a27_gjug33: 20, 23; t3-d01-material_mupd88yw_931iwr: 20, 22 |
-| Process và outcome reward | t3-d16-u6-m, t3-d16-u6-s | t3-d01-material_mupd8a27_gjug33: 21, 68 |
-| Voyager và thư viện kỹ năng | t3-d16-u7-m, t3-d16-u7-s | t3-d01-material_mupd8a27_gjug33: 22, 26; t3-d01-material_mupd88yw_931iwr: 21–22 |
-| Self-evolution an toàn | t3-d16-u8-m, t3-d16-u8-s | t3-d01-material_mupd8a27_gjug33: 28–33 |
-| Plan–Act–Verify | t3-d16-u9-m, t3-d16-u9-s | t3-d01-material_mupd8a27_gjug33: 35–37; t3-d01-material_mupd88yw_931iwr: 29 |
-| Sáu hook middleware | t3-d16-u10-m, t3-d16-u10-s, t3-d16-q2 | t3-d01-material_mupd8a27_gjug33: 40–45 |
-| Doom loop và ngân sách | t3-d16-u11-m, t3-d16-u11-s, t3-d16-q3 | t3-d01-material_mupd8a27_gjug33: 45–46; t3-d01-material_mupd88yw_931iwr: 24, 30 |
-| Compaction và eviction | t3-d16-u12-m, t3-d16-u12-s | t3-d01-material_mupd8a27_gjug33: 49–52 |
-| Orchestrator–worker fit | t3-d16-u13-m, t3-d16-u13-s | t3-d01-material_mupd8a27_gjug33: 54–56; t3-d01-material_mupd88yw_931iwr: 23, 32–33 |
-| Grounding và trích dẫn | t3-d16-u14-m, t3-d16-u14-s | t3-d01-material_mupd8a27_gjug33: 63–65 |
-| Đánh giá harness và lab | t3-d16-u15-m, t3-d16-u15-s | t3-d01-material_mupd8a27_gjug33: 67–74; t3-d01-material_mupd88yw_931iwr: 31, 35–40 |
-| Capability control và defence in depth | t3-d16-u16-m, t3-d16-u16-s | t3-d01-material_mupd8a27_gjug33: 57–61 |
+| Giới hạn ReAct | t3-d16-u1-m-r2, t3-d16-u1-s | t3-d01-material_mupd8a27_gjug33: 5–9; t3-d01-material_mupd88yw_931iwr: 5–9 |
+| Vòng Reflexion | t3-d16-u2-m-r2, t3-d16-u2-s, t3-d16-q1-r2 | t3-d01-material_mupd8a27_gjug33: 11–18; t3-d01-material_mupd88yw_931iwr: 11–18 |
+| Evaluator có cấu trúc | t3-d16-u3-m-r2, t3-d16-u3-s | t3-d01-material_mupd8a27_gjug33: 15–17; t3-d01-material_mupd88yw_931iwr: 15, 27 |
+| Reflection memory | t3-d16-u4-m-r2, t3-d16-u4-s | t3-d01-material_mupd8a27_gjug33: 16–18; t3-d01-material_mupd88yw_931iwr: 16, 28 |
+| LATS và tìm kiếm | t3-d16-u5-m-r2, t3-d16-u5-s | t3-d01-material_mupd8a27_gjug33: 20, 23; t3-d01-material_mupd88yw_931iwr: 20, 22 |
+| Process và outcome reward | t3-d16-u6-m-r2, t3-d16-u6-s | t3-d01-material_mupd8a27_gjug33: 21, 68 |
+| Voyager và thư viện kỹ năng | t3-d16-u7-m-r2, t3-d16-u7-s | t3-d01-material_mupd8a27_gjug33: 22, 26; t3-d01-material_mupd88yw_931iwr: 21–22 |
+| Self-evolution an toàn | t3-d16-u8-m-r2, t3-d16-u8-s | t3-d01-material_mupd8a27_gjug33: 28–33 |
+| Plan–Act–Verify | t3-d16-u9-m-r2, t3-d16-u9-s | t3-d01-material_mupd8a27_gjug33: 35–37; t3-d01-material_mupd88yw_931iwr: 29 |
+| Sáu hook middleware | t3-d16-u10-m-r2, t3-d16-u10-s, t3-d16-q2-r2 | t3-d01-material_mupd8a27_gjug33: 40–45 |
+| Doom loop và ngân sách | t3-d16-u11-m-r2, t3-d16-u11-s, t3-d16-q3-r2 | t3-d01-material_mupd8a27_gjug33: 45–46; t3-d01-material_mupd88yw_931iwr: 24, 30 |
+| Compaction và eviction | t3-d16-u12-m-r2, t3-d16-u12-s | t3-d01-material_mupd8a27_gjug33: 49–52 |
+| Orchestrator–worker fit | t3-d16-u13-m-r2, t3-d16-u13-s | t3-d01-material_mupd8a27_gjug33: 54–56; t3-d01-material_mupd88yw_931iwr: 23, 32–33 |
+| Grounding và trích dẫn | t3-d16-u14-m-r2, t3-d16-u14-s | t3-d01-material_mupd8a27_gjug33: 63–65 |
+| Đánh giá harness và lab | t3-d16-u15-m-r2, t3-d16-u15-s | t3-d01-material_mupd8a27_gjug33: 67–74; t3-d01-material_mupd88yw_931iwr: 31, 35–40 |
+| Capability control và defence in depth | t3-d16-u16-m-r2, t3-d16-u16-s | t3-d01-material_mupd8a27_gjug33: 57–61 |
 
 ### Bài 17 — Memory Systems for Agents
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Stateless và cross-session | t3-d17-u1-m, t3-d17-u1-s | t3-d04-material_murrg37w_txz4m6: 5–9, 46–47 |
-| Bảy lớp context | t3-d17-u2-m, t3-d17-u2-s | t3-d04-material_murrg37w_txz4m6: 12–17 |
-| Token budget và trim | t3-d17-u3-m, t3-d17-u3-s | t3-d04-material_murrg37w_txz4m6: 13–17, 20 |
-| Bốn loại memory | t3-d17-u4-m, t3-d17-u4-s, t3-d17-q1 | t3-d04-material_murrg37w_txz4m6: 19–25, 28, 71–73 |
-| Checkpoint và Store | t3-d17-u5-m, t3-d17-u5-s, t3-d17-q2 | t3-d04-material_murrg37w_txz4m6: 27, 31–34 |
-| Episodic thành procedural | t3-d17-u6-m, t3-d17-u6-s | t3-d04-material_murrg37w_txz4m6: 28–29, 33 |
-| Semantic memory và retrieval | t3-d17-u7-m, t3-d17-u7-s | t3-d04-material_murrg37w_txz4m6: 30–31, 47 |
-| Redis TTL theo phần tử | t3-d17-u8-m, t3-d17-u8-s | t3-d04-material_murrg37w_txz4m6: 21, 24, 71 |
-| Memory extraction và cập nhật | t3-d17-u9-m, t3-d17-u9-s | t3-d04-material_murrg37w_txz4m6: 21–22, 36, 47 |
-| Compaction có nguồn | t3-d17-u10-m, t3-d17-u10-s | t3-d04-material_murrg37w_txz4m6: 48–49 |
-| Managed memory và benchmark | t3-d17-u11-m, t3-d17-u11-s | t3-d04-material_murrg37w_txz4m6: 36–38, 41, 73 |
-| Consent và xóa memory | t3-d17-u12-m, t3-d17-u12-s, t3-d17-q3 | t3-d04-material_murrg37w_txz4m6: 39–43 |
-| Identity files và facts | t3-d17-u13-m, t3-d17-u13-s | t3-d04-material_murrg37w_txz4m6: 50–51, 57 |
-| Heartbeat và memory poisoning | t3-d17-u14-m, t3-d17-u14-s | t3-d04-material_murrg37w_txz4m6: 52–54, 58–59 |
-| Compiled knowledge base | t3-d17-u15-m, t3-d17-u15-s | t3-d04-material_murrg37w_txz4m6: 55–56 |
-| Memory hot path và background write | t3-d17-u16-m, t3-d17-u16-s | t3-d04-material_murrg37w_txz4m6: 69 |
-| Benchmark multi-session memory | t3-d17-u17-m, t3-d17-u17-s | t3-d04-material_murrg37w_txz4m6: 61–63, 68–69 |
+| Stateless và cross-session | t3-d17-u1-m-r2, t3-d17-u1-s | t3-d04-material_murrg37w_txz4m6: 5–9, 46–47 |
+| Bảy lớp context | t3-d17-u2-m-r2, t3-d17-u2-s | t3-d04-material_murrg37w_txz4m6: 12–17 |
+| Token budget và trim | t3-d17-u3-m-r2, t3-d17-u3-s | t3-d04-material_murrg37w_txz4m6: 13–17, 20 |
+| Bốn loại memory | t3-d17-u4-m-r2, t3-d17-u4-s, t3-d17-q1-r2 | t3-d04-material_murrg37w_txz4m6: 19–25, 28, 71–73 |
+| Checkpoint và Store | t3-d17-u5-m-r2, t3-d17-u5-s, t3-d17-q2-r2 | t3-d04-material_murrg37w_txz4m6: 27, 31–34 |
+| Episodic thành procedural | t3-d17-u6-m-r2, t3-d17-u6-s | t3-d04-material_murrg37w_txz4m6: 28–29, 33 |
+| Semantic memory và retrieval | t3-d17-u7-m-r2, t3-d17-u7-s | t3-d04-material_murrg37w_txz4m6: 30–31, 47 |
+| Redis TTL theo phần tử | t3-d17-u8-m-r2, t3-d17-u8-s | t3-d04-material_murrg37w_txz4m6: 21, 24, 71 |
+| Memory extraction và cập nhật | t3-d17-u9-m-r2, t3-d17-u9-s | t3-d04-material_murrg37w_txz4m6: 21–22, 36, 47 |
+| Compaction có nguồn | t3-d17-u10-m-r2, t3-d17-u10-s | t3-d04-material_murrg37w_txz4m6: 48–49 |
+| Managed memory và benchmark | t3-d17-u11-m-r2, t3-d17-u11-s | t3-d04-material_murrg37w_txz4m6: 36–38, 41, 73 |
+| Consent và xóa memory | t3-d17-u12-m-r2, t3-d17-u12-s, t3-d17-q3-r2 | t3-d04-material_murrg37w_txz4m6: 39–43 |
+| Identity files và facts | t3-d17-u13-m-r2, t3-d17-u13-s | t3-d04-material_murrg37w_txz4m6: 50–51, 57 |
+| Heartbeat và memory poisoning | t3-d17-u14-m-r2, t3-d17-u14-s | t3-d04-material_murrg37w_txz4m6: 52–54, 58–59 |
+| Compiled knowledge base | t3-d17-u15-m-r2, t3-d17-u15-s | t3-d04-material_murrg37w_txz4m6: 55–56 |
+| Memory hot path và background write | t3-d17-u16-m-r2, t3-d17-u16-s | t3-d04-material_murrg37w_txz4m6: 69 |
+| Benchmark multi-session memory | t3-d17-u17-m-r2, t3-d17-u17-s | t3-d04-material_murrg37w_txz4m6: 61–63, 68–69 |
 
 ### Bài 18 — Production RAG
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Error tree offline/online | t3-d18-u1-m, t3-d18-u1-s | t3-d02-material_mupd8d9p_rq5vl6: 7–9; t3-d02-material_mupd8c4m_wd179v: 7–9; t3-d02-material_muskv2oc_9vrfcw: 7–9 |
-| Hierarchical chunking | t3-d18-u2-m, t3-d18-u2-s | t3-d02-material_mupd8d9p_rq5vl6: 12–13; t3-d02-material_mupd8c4m_wd179v: 11–12; t3-d02-material_muskv2oc_9vrfcw: 11–13 |
-| Late chunking | t3-d18-u3-m, t3-d18-u3-s | t3-d02-material_mupd8d9p_rq5vl6: 14; t3-d02-material_mupd8c4m_wd179v: 13; t3-d02-material_muskv2oc_9vrfcw: 14 |
-| RAPTOR và cây tóm tắt | t3-d18-u4-m, t3-d18-u4-s | t3-d02-material_mupd8d9p_rq5vl6: 15; t3-d02-material_mupd8c4m_wd179v: 14; t3-d02-material_muskv2oc_9vrfcw: 15 |
-| Contextual enrichment | t3-d18-u5-m, t3-d18-u5-s | t3-d02-material_mupd8d9p_rq5vl6: 17–18; t3-d02-material_mupd8c4m_wd179v: 16–17; t3-d02-material_muskv2oc_9vrfcw: 16–18 |
-| Hypothetical Q&A | t3-d18-u6-m, t3-d18-u6-s | t3-d02-material_mupd8d9p_rq5vl6: 19; t3-d02-material_mupd8c4m_wd179v: 18; t3-d02-material_muskv2oc_9vrfcw: 19 |
-| Matryoshka embeddings | t3-d18-u7-m, t3-d18-u7-s, t3-d18-q1 | t3-d02-material_mupd8d9p_rq5vl6: 20; t3-d02-material_muskv2oc_9vrfcw: 56 |
-| Hybrid và RRF | t3-d18-u8-m, t3-d18-u8-s | t3-d02-material_mupd8d9p_rq5vl6: 24; t3-d02-material_mupd8c4m_wd179v: 23; t3-d02-material_muskv2oc_9vrfcw: 23 |
-| ColBERT late interaction | t3-d18-u9-m, t3-d18-u9-s | t3-d02-material_mupd8d9p_rq5vl6: 25–26; t3-d02-material_mupd8c4m_wd179v: 24–25; t3-d02-material_muskv2oc_9vrfcw: 24–25 |
-| SPLADE sparse learned | t3-d18-u10-m, t3-d18-u10-s | t3-d02-material_mupd8d9p_rq5vl6: 27; t3-d02-material_mupd8c4m_wd179v: 26; t3-d02-material_muskv2oc_9vrfcw: 26 |
-| Weighted fusion và rerouting | t3-d18-u11-m, t3-d18-u11-s | t3-d02-material_mupd8d9p_rq5vl6: 28; t3-d02-material_mupd8c4m_wd179v: 27; t3-d02-material_muskv2oc_9vrfcw: 27, 60 |
-| ColPali và retrieval đa phương thức | t3-d18-u12-m, t3-d18-u12-s | t3-d02-material_mupd8d9p_rq5vl6: 29; t3-d02-material_mupd8c4m_wd179v: 28; t3-d02-material_muskv2oc_9vrfcw: 28 |
-| Chọn vector database | t3-d18-u13-m, t3-d18-u13-s | t3-d02-material_mupd8d9p_rq5vl6: 30; t3-d02-material_muskv2oc_9vrfcw: 63 |
-| Retrieve rộng rồi rerank | t3-d18-u14-m, t3-d18-u14-s, t3-d18-q2 | t3-d02-material_mupd8d9p_rq5vl6: 31–33; t3-d02-material_mupd8c4m_wd179v: 30–32; t3-d02-material_muskv2oc_9vrfcw: 30–32, 61–62 |
-| Query transform theo vấn đề | t3-d18-u15-m, t3-d18-u15-s | t3-d02-material_mupd8d9p_rq5vl6: 34–35; t3-d02-material_mupd8c4m_wd179v: 33–35; t3-d02-material_muskv2oc_9vrfcw: 33–35 |
-| Corrective RAG và augmentation | t3-d18-u16-m, t3-d18-u16-s | t3-d02-material_mupd8d9p_rq5vl6: 36–37; t3-d02-material_mupd8c4m_wd179v: 36–37; t3-d02-material_muskv2oc_9vrfcw: 36–37 |
-| RAGAS và điểm mù embedding | t3-d18-u17-m, t3-d18-u17-s | t3-d02-material_mupd8d9p_rq5vl6: 39–43; t3-d02-material_mupd8c4m_wd179v: 40–43; t3-d02-material_muskv2oc_9vrfcw: 40–43 |
-| CDC upsert và delete | t3-d18-u18-m, t3-d18-u18-s | t3-d02-material_muskv2oc_9vrfcw: 52–53 |
-| Blue-green index và alias | t3-d18-u19-m, t3-d18-u19-s, t3-d18-q3 | t3-d02-material_muskv2oc_9vrfcw: 54–55 |
-| Production SLO và drift | t3-d18-u20-m, t3-d18-u20-s | t3-d02-material_muskv2oc_9vrfcw: 46–50, 58–59, 65–69; t3-d02-material_mupd8d9p_rq5vl6: 45–49 |
-| Ablation và lab RAG có kiểm soát | t3-d18-u21-m, t3-d18-u21-s | t3-d02-material_muskv2oc_9vrfcw: 70–75; t3-d02-material_mupd8d9p_rq5vl6: 50–53; t3-d02-material_mupd8c4m_wd179v: 49–52 |
+| Error tree offline/online | t3-d18-u1-m-r2, t3-d18-u1-s | t3-d02-material_mupd8d9p_rq5vl6: 7–9; t3-d02-material_mupd8c4m_wd179v: 7–9; t3-d02-material_muskv2oc_9vrfcw: 7–9 |
+| Hierarchical chunking | t3-d18-u2-m-r2, t3-d18-u2-s | t3-d02-material_mupd8d9p_rq5vl6: 12–13; t3-d02-material_mupd8c4m_wd179v: 11–12; t3-d02-material_muskv2oc_9vrfcw: 11–13 |
+| Late chunking | t3-d18-u3-m-r2, t3-d18-u3-s | t3-d02-material_mupd8d9p_rq5vl6: 14; t3-d02-material_mupd8c4m_wd179v: 13; t3-d02-material_muskv2oc_9vrfcw: 14 |
+| RAPTOR và cây tóm tắt | t3-d18-u4-m-r2, t3-d18-u4-s | t3-d02-material_mupd8d9p_rq5vl6: 15; t3-d02-material_mupd8c4m_wd179v: 14; t3-d02-material_muskv2oc_9vrfcw: 15 |
+| Contextual enrichment | t3-d18-u5-m-r2, t3-d18-u5-s | t3-d02-material_mupd8d9p_rq5vl6: 17–18; t3-d02-material_mupd8c4m_wd179v: 16–17; t3-d02-material_muskv2oc_9vrfcw: 16–18 |
+| Hypothetical Q&A | t3-d18-u6-m-r2, t3-d18-u6-s | t3-d02-material_mupd8d9p_rq5vl6: 19; t3-d02-material_mupd8c4m_wd179v: 18; t3-d02-material_muskv2oc_9vrfcw: 19 |
+| Matryoshka embeddings | t3-d18-u7-m-r2, t3-d18-u7-s, t3-d18-q1-r2 | t3-d02-material_mupd8d9p_rq5vl6: 20; t3-d02-material_muskv2oc_9vrfcw: 56 |
+| Hybrid và RRF | t3-d18-u8-m-r2, t3-d18-u8-s | t3-d02-material_mupd8d9p_rq5vl6: 24; t3-d02-material_mupd8c4m_wd179v: 23; t3-d02-material_muskv2oc_9vrfcw: 23 |
+| ColBERT late interaction | t3-d18-u9-m-r2, t3-d18-u9-s | t3-d02-material_mupd8d9p_rq5vl6: 25–26; t3-d02-material_mupd8c4m_wd179v: 24–25; t3-d02-material_muskv2oc_9vrfcw: 24–25 |
+| SPLADE sparse learned | t3-d18-u10-m-r2, t3-d18-u10-s | t3-d02-material_mupd8d9p_rq5vl6: 27; t3-d02-material_mupd8c4m_wd179v: 26; t3-d02-material_muskv2oc_9vrfcw: 26 |
+| Weighted fusion và rerouting | t3-d18-u11-m-r2, t3-d18-u11-s | t3-d02-material_mupd8d9p_rq5vl6: 28; t3-d02-material_mupd8c4m_wd179v: 27; t3-d02-material_muskv2oc_9vrfcw: 27, 60 |
+| ColPali và retrieval đa phương thức | t3-d18-u12-m-r2, t3-d18-u12-s | t3-d02-material_mupd8d9p_rq5vl6: 29; t3-d02-material_mupd8c4m_wd179v: 28; t3-d02-material_muskv2oc_9vrfcw: 28 |
+| Chọn vector database | t3-d18-u13-m-r2, t3-d18-u13-s | t3-d02-material_mupd8d9p_rq5vl6: 30; t3-d02-material_muskv2oc_9vrfcw: 63 |
+| Retrieve rộng rồi rerank | t3-d18-u14-m-r2, t3-d18-u14-s, t3-d18-q2-r2 | t3-d02-material_mupd8d9p_rq5vl6: 31–33; t3-d02-material_mupd8c4m_wd179v: 30–32; t3-d02-material_muskv2oc_9vrfcw: 30–32, 61–62 |
+| Query transform theo vấn đề | t3-d18-u15-m-r2, t3-d18-u15-s | t3-d02-material_mupd8d9p_rq5vl6: 34–35; t3-d02-material_mupd8c4m_wd179v: 33–35; t3-d02-material_muskv2oc_9vrfcw: 33–35 |
+| Corrective RAG và augmentation | t3-d18-u16-m-r2, t3-d18-u16-s | t3-d02-material_mupd8d9p_rq5vl6: 36–37; t3-d02-material_mupd8c4m_wd179v: 36–37; t3-d02-material_muskv2oc_9vrfcw: 36–37 |
+| RAGAS và điểm mù embedding | t3-d18-u17-m-r2, t3-d18-u17-s | t3-d02-material_mupd8d9p_rq5vl6: 39–43; t3-d02-material_mupd8c4m_wd179v: 40–43; t3-d02-material_muskv2oc_9vrfcw: 40–43 |
+| CDC upsert và delete | t3-d18-u18-m-r2, t3-d18-u18-s | t3-d02-material_muskv2oc_9vrfcw: 52–53 |
+| Blue-green index và alias | t3-d18-u19-m-r2, t3-d18-u19-s, t3-d18-q3-r2 | t3-d02-material_muskv2oc_9vrfcw: 54–55 |
+| Production SLO và drift | t3-d18-u20-m-r2, t3-d18-u20-s | t3-d02-material_muskv2oc_9vrfcw: 46–50, 58–59, 65–69; t3-d02-material_mupd8d9p_rq5vl6: 45–49 |
+| Ablation và lab RAG có kiểm soát | t3-d18-u21-m-r2, t3-d18-u21-s | t3-d02-material_muskv2oc_9vrfcw: 70–75; t3-d02-material_mupd8d9p_rq5vl6: 50–53; t3-d02-material_mupd8c4m_wd179v: 49–52 |
 
 ### Bài 19 — GraphRAG & Knowledge Graphs
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Flat RAG và quan hệ nhiều bước | t3-d19-u1-m, t3-d19-u1-s | t3-d05-material_muulzmqz_nxp578: 5–9, 42 |
-| Node edge triple và hướng | t3-d19-u2-m, t3-d19-u2-s, t3-d19-q1 | t3-d05-material_muulzmqz_nxp578: 11–15 |
-| Property graph và RDF | t3-d19-u3-m, t3-d19-u3-s | t3-d05-material_muulzmqz_nxp578: 16–17 |
-| Ontology và governance | t3-d19-u4-m, t3-d19-u4-s | t3-d05-material_muulzmqz_nxp578: 18–21, 26, 39 |
-| Lexical và semantic graph | t3-d19-u5-m, t3-d19-u5-s | t3-d05-material_muulzmqz_nxp578: 22–25 |
-| Extraction resolution linking | t3-d19-u6-m, t3-d19-u6-s, t3-d19-q2 | t3-d05-material_muulzmqz_nxp578: 28–29, 38 |
-| Provenance và cập nhật graph | t3-d19-u7-m, t3-d19-u7-s | t3-d05-material_muulzmqz_nxp578: 23, 26, 28, 38–39 |
-| Chọn seed và disambiguation | t3-d19-u8-m, t3-d19-u8-s | t3-d05-material_muulzmqz_nxp578: 32–33 |
-| Traversal có giới hạn | t3-d19-u9-m, t3-d19-u9-s, t3-d19-q3 | t3-d05-material_muulzmqz_nxp578: 18, 34 |
-| Textualization giữ bằng chứng | t3-d19-u10-m, t3-d19-u10-s | t3-d05-material_muulzmqz_nxp578: 35–36 |
-| Hybrid graph và vector | t3-d19-u11-m, t3-d19-u11-s | t3-d05-material_muulzmqz_nxp578: 37–39, 42 |
-| ROI và kiểm định GraphRAG | t3-d19-u12-m, t3-d19-u12-s | t3-d05-material_muulzmqz_nxp578: 40–45 |
+| Flat RAG và quan hệ nhiều bước | t3-d19-u1-m-r2, t3-d19-u1-s | t3-d05-material_muulzmqz_nxp578: 5–9, 42 |
+| Node edge triple và hướng | t3-d19-u2-m-r2, t3-d19-u2-s, t3-d19-q1-r2 | t3-d05-material_muulzmqz_nxp578: 11–15 |
+| Property graph và RDF | t3-d19-u3-m-r2, t3-d19-u3-s | t3-d05-material_muulzmqz_nxp578: 16–17 |
+| Ontology và governance | t3-d19-u4-m-r2, t3-d19-u4-s | t3-d05-material_muulzmqz_nxp578: 18–21, 26, 39 |
+| Lexical và semantic graph | t3-d19-u5-m-r2, t3-d19-u5-s | t3-d05-material_muulzmqz_nxp578: 22–25 |
+| Extraction resolution linking | t3-d19-u6-m-r2, t3-d19-u6-s, t3-d19-q2-r2 | t3-d05-material_muulzmqz_nxp578: 28–29, 38 |
+| Provenance và cập nhật graph | t3-d19-u7-m-r2, t3-d19-u7-s | t3-d05-material_muulzmqz_nxp578: 23, 26, 28, 38–39 |
+| Chọn seed và disambiguation | t3-d19-u8-m-r2, t3-d19-u8-s | t3-d05-material_muulzmqz_nxp578: 32–33 |
+| Traversal có giới hạn | t3-d19-u9-m-r2, t3-d19-u9-s, t3-d19-q3-r2 | t3-d05-material_muulzmqz_nxp578: 18, 34 |
+| Textualization giữ bằng chứng | t3-d19-u10-m-r2, t3-d19-u10-s | t3-d05-material_muulzmqz_nxp578: 35–36 |
+| Hybrid graph và vector | t3-d19-u11-m-r2, t3-d19-u11-s | t3-d05-material_muulzmqz_nxp578: 37–39, 42 |
+| ROI và kiểm định GraphRAG | t3-d19-u12-m-r2, t3-d19-u12-s | t3-d05-material_muulzmqz_nxp578: 40–45 |
 
 ### Bài 20 — Multi-Agent Systems & Harness
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Khi nào cần nhiều agent | t3-d20-u1-m, t3-d20-u1-s | t3-d06-material_muwbdh7w_toum0r: 5–8; t3-d06-material_muvawtzb_vgqhj3: 6–12; t3-d06-material_muv9u158_ze3stz: 5–9 |
-| Topology và workflow trước | t3-d20-u2-m, t3-d20-u2-s | t3-d06-material_muwbdh7w_toum0r: 10–12; t3-d06-material_muvawtzb_vgqhj3: 14–16; t3-d06-material_muv9u158_ze3stz: 11–12 |
-| Routing theo độ khó | t3-d20-u3-m, t3-d20-u3-s | t3-d06-material_muwbdh7w_toum0r: 15; t3-d06-material_muvawtzb_vgqhj3: 20; t3-d06-material_muv9u158_ze3stz: 13 |
-| Supervisor và handoff | t3-d20-u4-m, t3-d20-u4-s | t3-d06-material_muvawtzb_vgqhj3: 16–18; t3-d06-material_muv9u158_ze3stz: 15–16 |
-| Async pools và deadline | t3-d20-u5-m, t3-d20-u5-s, t3-d20-q1 | t3-d06-material_muwbdh7w_toum0r: 13; t3-d06-material_muvawtzb_vgqhj3: 17–18; t3-d06-material_muv9u158_ze3stz: 21–23 |
-| Shared state và một người ghi | t3-d20-u6-m, t3-d20-u6-s | t3-d06-material_muwbdh7w_toum0r: 50; t3-d06-material_muvawtzb_vgqhj3: 52–53; t3-d06-material_muv9u158_ze3stz: 22 |
-| MAST và error compounding | t3-d20-u7-m, t3-d20-u7-s | t3-d06-material_muwbdh7w_toum0r: 17–19; t3-d06-material_muvawtzb_vgqhj3: 24–26 |
-| Model và harness | t3-d20-u8-m, t3-d20-u8-s | t3-d06-material_muwbdh7w_toum0r: 22–27; t3-d06-material_muvawtzb_vgqhj3: 29–38 |
-| Agent–computer interface | t3-d20-u9-m, t3-d20-u9-s | t3-d06-material_muwbdh7w_toum0r: 25–26; t3-d06-material_muvawtzb_vgqhj3: 35–36 |
-| Plugin harness và cấu hình | t3-d20-u10-m, t3-d20-u10-s | t3-d06-material_muwbdh7w_toum0r: 29–33, 38–39; t3-d06-material_muvawtzb_vgqhj3: 34, 45 |
-| Event log và tool lifecycle | t3-d20-u11-m, t3-d20-u11-s | t3-d06-material_muwbdh7w_toum0r: 34–35 |
-| Permissions và sandbox | t3-d20-u12-m, t3-d20-u12-s, t3-d20-q2 | t3-d06-material_muwbdh7w_toum0r: 36–37; t3-d06-material_muvawtzb_vgqhj3: 35, 70 |
-| Brief như context firewall | t3-d20-u13-m, t3-d20-u13-s | t3-d06-material_muwbdh7w_toum0r: 41–44; t3-d06-material_muvawtzb_vgqhj3: 40–44 |
-| Progressive skills và cache budget | t3-d20-u14-m, t3-d20-u14-s | t3-d06-material_muwbdh7w_toum0r: 43–45; t3-d06-material_muvawtzb_vgqhj3: 43–47 |
-| Long-horizon drift | t3-d20-u15-m, t3-d20-u15-s | t3-d06-material_muwbdh7w_toum0r: 47–52; t3-d06-material_muvawtzb_vgqhj3: 49–56 |
-| Playbook evolution và reward hacking | t3-d20-u16-m, t3-d20-u16-s, t3-d20-q3 | t3-d06-material_muwbdh7w_toum0r: 54–60; t3-d06-material_muvawtzb_vgqhj3: 58–66, 77–80 |
-| Evaluation và lethal trifecta | t3-d20-u17-m, t3-d20-u17-s | t3-d06-material_muwbdh7w_toum0r: 62–65, 68–72; t3-d06-material_muvawtzb_vgqhj3: 68–81 |
-| Debate và lỗi tương quan | t3-d20-u18-m, t3-d20-u18-s | t3-d06-material_muv9u158_ze3stz: 17–19 |
-| Chọn framework theo yêu cầu phối hợp | t3-d20-u19-m, t3-d20-u19-s | t3-d06-material_muv9u158_ze3stz: 24–25 |
-| Đọc trace và peer review multi-agent | t3-d20-u20-m, t3-d20-u20-s | t3-d06-material_muv9u158_ze3stz: 27–31; t3-d06-material_muwbdh7w_toum0r: 68–72 |
+| Khi nào cần nhiều agent | t3-d20-u1-m-r2, t3-d20-u1-s | t3-d06-material_muwbdh7w_toum0r: 5–8; t3-d06-material_muvawtzb_vgqhj3: 6–12; t3-d06-material_muv9u158_ze3stz: 5–9 |
+| Topology và workflow trước | t3-d20-u2-m-r2, t3-d20-u2-s | t3-d06-material_muwbdh7w_toum0r: 10–12; t3-d06-material_muvawtzb_vgqhj3: 14–16; t3-d06-material_muv9u158_ze3stz: 11–12 |
+| Routing theo độ khó | t3-d20-u3-m-r2, t3-d20-u3-s | t3-d06-material_muwbdh7w_toum0r: 15; t3-d06-material_muvawtzb_vgqhj3: 20; t3-d06-material_muv9u158_ze3stz: 13 |
+| Supervisor và handoff | t3-d20-u4-m-r2, t3-d20-u4-s | t3-d06-material_muvawtzb_vgqhj3: 16–18; t3-d06-material_muv9u158_ze3stz: 15–16 |
+| Async pools và deadline | t3-d20-u5-m-r2, t3-d20-u5-s, t3-d20-q1-r2 | t3-d06-material_muwbdh7w_toum0r: 13; t3-d06-material_muvawtzb_vgqhj3: 17–18; t3-d06-material_muv9u158_ze3stz: 21–23 |
+| Shared state và một người ghi | t3-d20-u6-m-r2, t3-d20-u6-s | t3-d06-material_muwbdh7w_toum0r: 50; t3-d06-material_muvawtzb_vgqhj3: 52–53; t3-d06-material_muv9u158_ze3stz: 22 |
+| MAST và error compounding | t3-d20-u7-m-r2, t3-d20-u7-s | t3-d06-material_muwbdh7w_toum0r: 17–19; t3-d06-material_muvawtzb_vgqhj3: 24–26 |
+| Model và harness | t3-d20-u8-m-r2, t3-d20-u8-s | t3-d06-material_muwbdh7w_toum0r: 22–27; t3-d06-material_muvawtzb_vgqhj3: 29–38 |
+| Agent–computer interface | t3-d20-u9-m-r2, t3-d20-u9-s | t3-d06-material_muwbdh7w_toum0r: 25–26; t3-d06-material_muvawtzb_vgqhj3: 35–36 |
+| Plugin harness và cấu hình | t3-d20-u10-m-r2, t3-d20-u10-s | t3-d06-material_muwbdh7w_toum0r: 29–33, 38–39; t3-d06-material_muvawtzb_vgqhj3: 34, 45 |
+| Event log và tool lifecycle | t3-d20-u11-m-r2, t3-d20-u11-s | t3-d06-material_muwbdh7w_toum0r: 34–35 |
+| Permissions và sandbox | t3-d20-u12-m-r2, t3-d20-u12-s, t3-d20-q2-r2 | t3-d06-material_muwbdh7w_toum0r: 36–37; t3-d06-material_muvawtzb_vgqhj3: 35, 70 |
+| Brief như context firewall | t3-d20-u13-m-r2, t3-d20-u13-s | t3-d06-material_muwbdh7w_toum0r: 41–44; t3-d06-material_muvawtzb_vgqhj3: 40–44 |
+| Progressive skills và cache budget | t3-d20-u14-m-r2, t3-d20-u14-s | t3-d06-material_muwbdh7w_toum0r: 43–45; t3-d06-material_muvawtzb_vgqhj3: 43–47 |
+| Long-horizon drift | t3-d20-u15-m-r2, t3-d20-u15-s | t3-d06-material_muwbdh7w_toum0r: 47–52; t3-d06-material_muvawtzb_vgqhj3: 49–56 |
+| Playbook evolution và reward hacking | t3-d20-u16-m-r2, t3-d20-u16-s, t3-d20-q3-r2 | t3-d06-material_muwbdh7w_toum0r: 54–60; t3-d06-material_muvawtzb_vgqhj3: 58–66, 77–80 |
+| Evaluation và lethal trifecta | t3-d20-u17-m-r2, t3-d20-u17-s | t3-d06-material_muwbdh7w_toum0r: 62–65, 68–72; t3-d06-material_muvawtzb_vgqhj3: 68–81 |
+| Debate và lỗi tương quan | t3-d20-u18-m-r2, t3-d20-u18-s | t3-d06-material_muv9u158_ze3stz: 17–19 |
+| Chọn framework theo yêu cầu phối hợp | t3-d20-u19-m-r2, t3-d20-u19-s | t3-d06-material_muv9u158_ze3stz: 24–25 |
+| Đọc trace và peer review multi-agent | t3-d20-u20-m-r2, t3-d20-u20-s | t3-d06-material_muv9u158_ze3stz: 27–31; t3-d06-material_muwbdh7w_toum0r: 68–72 |
 
 ### Bài 21 — Fine-tuning LLMs
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Baseline và ROI fine-tuning | t3-d21-u1-m, t3-d21-u1-s | t3-d07-material_muwubnr6_3ci1ah: 6–11; t3-d07-material_muwuoygw_rh18dc: 5–7 |
-| Vòng đời model và di sản base | t3-d21-u2-m, t3-d21-u2-s | t3-d07-material_muwubnr6_3ci1ah: 13–21; t3-d07-material_muwuoygw_rh18dc: 8–11 |
-| Mid-training và domain adaptation | t3-d21-u3-m, t3-d21-u3-s | t3-d07-material_muwubnr6_3ci1ah: 23–29; t3-d07-material_muwuoygw_rh18dc: 12–13 |
-| CPT SFT và distillation | t3-d21-u4-m, t3-d21-u4-s | t3-d07-material_muwubnr6_3ci1ah: 31–33; t3-d07-material_muwuoygw_rh18dc: 14–15 |
-| On-policy và exposure mismatch | t3-d21-u5-m, t3-d21-u5-s | t3-d07-material_muwubnr6_3ci1ah: 32, 101; t3-d07-material_muwuoygw_rh18dc: 14, 46 |
-| Optimizer và claim thực nghiệm | t3-d21-u6-m, t3-d21-u6-s | t3-d07-material_muwubnr6_3ci1ah: 35–38; t3-d07-material_muwuoygw_rh18dc: 16 |
-| MoE attention và diffusion | t3-d21-u7-m, t3-d21-u7-s | t3-d07-material_muwubnr6_3ci1ah: 39–41; t3-d07-material_muwuoygw_rh18dc: 17–19 |
-| Bộ nhớ full fine-tuning | t3-d21-u8-m, t3-d21-u8-s | t3-d07-material_muwubnr6_3ci1ah: 43–44; t3-d07-material_muwuoygw_rh18dc: 20–21 |
-| Activations và checkpointing | t3-d21-u9-m, t3-d21-u9-s | t3-d07-material_muwubnr6_3ci1ah: 45, 80; t3-d07-material_muwuoygw_rh18dc: 20, 37–39 |
-| ZeRO FSDP và offload | t3-d21-u10-m, t3-d21-u10-s | t3-d07-material_muwubnr6_3ci1ah: 46–48; t3-d08-material_muywktdm_rtk239: 56 |
-| Bản đồ PEFT | t3-d21-u11-m, t3-d21-u11-s | t3-d07-material_muwubnr6_3ci1ah: 50–51; t3-d07-material_muwuoygw_rh18dc: 22 |
-| Cơ chế và tham số LoRA | t3-d21-u12-m, t3-d21-u12-s, t3-d21-q1 | t3-d07-material_muwubnr6_3ci1ah: 53–55; t3-d07-material_muwuoygw_rh18dc: 23–24 |
-| Target modules và capacity | t3-d21-u13-m, t3-d21-u13-s | t3-d07-material_muwubnr6_3ci1ah: 57–62, 67; t3-d07-material_muwuoygw_rh18dc: 25–31 |
-| Learning rate batch và rank | t3-d21-u14-m, t3-d21-u14-s | t3-d07-material_muwubnr6_3ci1ah: 55, 59–60, 75–76; t3-d07-material_muwuoygw_rh18dc: 27–29, 35–36 |
-| Các biến thể adapter | t3-d21-u15-m, t3-d21-u15-s | t3-d07-material_muwubnr6_3ci1ah: 64–67; t3-d07-material_muwuoygw_rh18dc: 30–31; t3-d08-material_muywktdm_rtk239: 57 |
-| QLoRA và lượng tử hóa | t3-d21-u16-m, t3-d21-u16-s, t3-d21-q2 | t3-d07-material_muwubnr6_3ci1ah: 69–72; t3-d07-material_muwuoygw_rh18dc: 32–34 |
-| Kernel logits và loss memory | t3-d21-u17-m, t3-d21-u17-s | t3-d07-material_muwubnr6_3ci1ah: 78–81; t3-d07-material_muwuoygw_rh18dc: 37–39; t3-d08-material_muywktdm_rtk239: 55 |
-| Tooling và experiment tracking | t3-d21-u18-m, t3-d21-u18-s | t3-d07-material_muwubnr6_3ci1ah: 83–87; t3-d07-material_muwuoygw_rh18dc: 40–41 |
-| Loss masking và labels | t3-d21-u19-m, t3-d21-u19-s, t3-d21-q3 | t3-d07-material_muwubnr6_3ci1ah: 89–90, 104, 133; t3-d07-material_muwuoygw_rh18dc: 42–43, 51, 65 |
-| Sequence packing | t3-d21-u20-m, t3-d21-u20-s | t3-d07-material_muwubnr6_3ci1ah: 91–92; t3-d07-material_muwuoygw_rh18dc: 44 |
-| Reasoning template và masked spans | t3-d21-u21-m, t3-d21-u21-s | t3-d07-material_muwubnr6_3ci1ah: 93, 124; t3-d07-material_muwuoygw_rh18dc: 45, 61 |
-| Synthetic data và model collapse | t3-d21-u22-m, t3-d21-u22-s | t3-d07-material_muwubnr6_3ci1ah: 95–101; t3-d07-material_muwuoygw_rh18dc: 46–49; t3-d08-material_muywktdm_rtk239: 53–54 |
-| Trajectory SFT và RL môi trường | t3-d21-u23-m, t3-d21-u23-s | t3-d07-material_muwubnr6_3ci1ah: 103–110; t3-d07-material_muwuoygw_rh18dc: 50–54 |
-| Data engine và rubric hacking | t3-d21-u24-m, t3-d21-u24-s | t3-d07-material_muwubnr6_3ci1ah: 112–118; t3-d07-material_muwuoygw_rh18dc: 55–57 |
-| Eval và chat-template debugging | t3-d21-u25-m, t3-d21-u25-s | t3-d07-material_muwubnr6_3ci1ah: 120–124, 133; t3-d07-material_muwuoygw_rh18dc: 58–61, 65 |
-| Merge multi-LoRA và serving | t3-d21-u26-m, t3-d21-u26-s, t3-d21-q4 | t3-d07-material_muwubnr6_3ci1ah: 126–128; t3-d07-material_muwuoygw_rh18dc: 62–63; t3-d08-material_muywktdm_rtk239: 58–59 |
-| License privacy và deliverables | t3-d21-u27-m, t3-d21-u27-s | t3-d07-material_muwubnr6_3ci1ah: 130–136; t3-d07-material_muwuoygw_rh18dc: 64–68 |
+| Baseline và ROI fine-tuning | t3-d21-u1-m-r2, t3-d21-u1-s | t3-d07-material_muwubnr6_3ci1ah: 6–11; t3-d07-material_muwuoygw_rh18dc: 5–7 |
+| Vòng đời model và di sản base | t3-d21-u2-m-r2, t3-d21-u2-s | t3-d07-material_muwubnr6_3ci1ah: 13–21; t3-d07-material_muwuoygw_rh18dc: 8–11 |
+| Mid-training và domain adaptation | t3-d21-u3-m-r2, t3-d21-u3-s | t3-d07-material_muwubnr6_3ci1ah: 23–29; t3-d07-material_muwuoygw_rh18dc: 12–13 |
+| CPT SFT và distillation | t3-d21-u4-m-r2, t3-d21-u4-s | t3-d07-material_muwubnr6_3ci1ah: 31–33; t3-d07-material_muwuoygw_rh18dc: 14–15 |
+| On-policy và exposure mismatch | t3-d21-u5-m-r2, t3-d21-u5-s | t3-d07-material_muwubnr6_3ci1ah: 32, 101; t3-d07-material_muwuoygw_rh18dc: 14, 46 |
+| Optimizer và claim thực nghiệm | t3-d21-u6-m-r2, t3-d21-u6-s | t3-d07-material_muwubnr6_3ci1ah: 35–38; t3-d07-material_muwuoygw_rh18dc: 16 |
+| MoE attention và diffusion | t3-d21-u7-m-r2, t3-d21-u7-s | t3-d07-material_muwubnr6_3ci1ah: 39–41; t3-d07-material_muwuoygw_rh18dc: 17–19 |
+| Bộ nhớ full fine-tuning | t3-d21-u8-m-r2, t3-d21-u8-s | t3-d07-material_muwubnr6_3ci1ah: 43–44; t3-d07-material_muwuoygw_rh18dc: 20–21 |
+| Activations và checkpointing | t3-d21-u9-m-r2, t3-d21-u9-s | t3-d07-material_muwubnr6_3ci1ah: 45, 80; t3-d07-material_muwuoygw_rh18dc: 20, 37–39 |
+| ZeRO FSDP và offload | t3-d21-u10-m-r2, t3-d21-u10-s | t3-d07-material_muwubnr6_3ci1ah: 46–48; t3-d08-material_muywktdm_rtk239: 56 |
+| Bản đồ PEFT | t3-d21-u11-m-r2, t3-d21-u11-s | t3-d07-material_muwubnr6_3ci1ah: 50–51; t3-d07-material_muwuoygw_rh18dc: 22 |
+| Cơ chế và tham số LoRA | t3-d21-u12-m-r2, t3-d21-u12-s, t3-d21-q1-r2 | t3-d07-material_muwubnr6_3ci1ah: 53–55; t3-d07-material_muwuoygw_rh18dc: 23–24 |
+| Target modules và capacity | t3-d21-u13-m-r2, t3-d21-u13-s | t3-d07-material_muwubnr6_3ci1ah: 57–62, 67; t3-d07-material_muwuoygw_rh18dc: 25–31 |
+| Learning rate batch và rank | t3-d21-u14-m-r2, t3-d21-u14-s | t3-d07-material_muwubnr6_3ci1ah: 55, 59–60, 75–76; t3-d07-material_muwuoygw_rh18dc: 27–29, 35–36 |
+| Các biến thể adapter | t3-d21-u15-m-r2, t3-d21-u15-s | t3-d07-material_muwubnr6_3ci1ah: 64–67; t3-d07-material_muwuoygw_rh18dc: 30–31; t3-d08-material_muywktdm_rtk239: 57 |
+| QLoRA và lượng tử hóa | t3-d21-u16-m-r2, t3-d21-u16-s, t3-d21-q2-r2 | t3-d07-material_muwubnr6_3ci1ah: 69–72; t3-d07-material_muwuoygw_rh18dc: 32–34 |
+| Kernel logits và loss memory | t3-d21-u17-m-r2, t3-d21-u17-s | t3-d07-material_muwubnr6_3ci1ah: 78–81; t3-d07-material_muwuoygw_rh18dc: 37–39; t3-d08-material_muywktdm_rtk239: 55 |
+| Tooling và experiment tracking | t3-d21-u18-m-r2, t3-d21-u18-s | t3-d07-material_muwubnr6_3ci1ah: 83–87; t3-d07-material_muwuoygw_rh18dc: 40–41 |
+| Loss masking và labels | t3-d21-u19-m-r2, t3-d21-u19-s, t3-d21-q3-r2 | t3-d07-material_muwubnr6_3ci1ah: 89–90, 104, 133; t3-d07-material_muwuoygw_rh18dc: 42–43, 51, 65 |
+| Sequence packing | t3-d21-u20-m-r2, t3-d21-u20-s | t3-d07-material_muwubnr6_3ci1ah: 91–92; t3-d07-material_muwuoygw_rh18dc: 44 |
+| Reasoning template và masked spans | t3-d21-u21-m-r2, t3-d21-u21-s | t3-d07-material_muwubnr6_3ci1ah: 93, 124; t3-d07-material_muwuoygw_rh18dc: 45, 61 |
+| Synthetic data và model collapse | t3-d21-u22-m-r2, t3-d21-u22-s | t3-d07-material_muwubnr6_3ci1ah: 95–101; t3-d07-material_muwuoygw_rh18dc: 46–49; t3-d08-material_muywktdm_rtk239: 53–54 |
+| Trajectory SFT và RL môi trường | t3-d21-u23-m-r2, t3-d21-u23-s | t3-d07-material_muwubnr6_3ci1ah: 103–110; t3-d07-material_muwuoygw_rh18dc: 50–54 |
+| Data engine và rubric hacking | t3-d21-u24-m-r2, t3-d21-u24-s | t3-d07-material_muwubnr6_3ci1ah: 112–118; t3-d07-material_muwuoygw_rh18dc: 55–57 |
+| Eval và chat-template debugging | t3-d21-u25-m-r2, t3-d21-u25-s | t3-d07-material_muwubnr6_3ci1ah: 120–124, 133; t3-d07-material_muwuoygw_rh18dc: 58–61, 65 |
+| Merge multi-LoRA và serving | t3-d21-u26-m-r2, t3-d21-u26-s, t3-d21-q4-r2 | t3-d07-material_muwubnr6_3ci1ah: 126–128; t3-d07-material_muwuoygw_rh18dc: 62–63; t3-d08-material_muywktdm_rtk239: 58–59 |
+| License privacy và deliverables | t3-d21-u27-m-r2, t3-d21-u27-s | t3-d07-material_muwubnr6_3ci1ah: 130–136; t3-d07-material_muwuoygw_rh18dc: 64–68 |
 
 ### Bài 22 — DPO ORPO & Alignment
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| SFT và alignment | t3-d22-u1-m, t3-d22-u1-s | t3-d08-material_muywktdm_rtk239: 5–7 |
-| RLHF pipeline | t3-d22-u2-m, t3-d22-u2-s | t3-d08-material_muywktdm_rtk239: 9–10, 14 |
-| DPO và reference log-ratio | t3-d22-u3-m, t3-d22-u3-s, t3-d22-q1 | t3-d08-material_muywktdm_rtk239: 12–15, 28 |
-| Beta và regularization | t3-d22-u4-m, t3-d22-u4-s | t3-d08-material_muywktdm_rtk239: 13, 15–16 |
-| Likelihood displacement và length hacking | t3-d22-u5-m, t3-d22-u5-s | t3-d08-material_muywktdm_rtk239: 16, 38 |
-| Preference pair chất lượng | t3-d22-u6-m, t3-d22-u6-s | t3-d08-material_muywktdm_rtk239: 27, 32 |
-| ORPO objective kết hợp | t3-d22-u7-m, t3-d22-u7-s, t3-d22-q2 | t3-d08-material_muywktdm_rtk239: 21 |
-| SimPO và KTO | t3-d22-u8-m, t3-d22-u8-s | t3-d08-material_muywktdm_rtk239: 19–20 |
-| GRPO bỏ critic chứ không bỏ mọi reward | t3-d22-u9-m, t3-d22-u9-s, t3-d22-q3 | t3-d08-material_muywktdm_rtk239: 23–24 |
-| RLVR và verifier | t3-d22-u10-m, t3-d22-u10-s, t3-d22-q4 | t3-d08-material_muywktdm_rtk239: 24–25, 46 |
-| Iterative DPO và distribution shift | t3-d22-u11-m, t3-d22-u11-s | t3-d08-material_muywktdm_rtk239: 29–30, 44–49 |
-| Constitutional AI | t3-d22-u12-m, t3-d22-u12-s | t3-d08-material_muywktdm_rtk239: 34–35 |
-| RLAIF và recursion của judge | t3-d22-u13-m, t3-d22-u13-s | t3-d08-material_muywktdm_rtk239: 35, 41 |
-| Red team và đánh giá alignment | t3-d22-u14-m, t3-d22-u14-s | t3-d08-material_muywktdm_rtk239: 36, 38–42 |
-| Training strategy theo constraint | t3-d22-u15-m, t3-d22-u15-s | t3-d08-material_muywktdm_rtk239: 51–57, 60 |
-| Model merging và export | t3-d22-u16-m, t3-d22-u16-s | t3-d08-material_muywktdm_rtk239: 58–59 |
+| SFT và alignment | t3-d22-u1-m-r2, t3-d22-u1-s | t3-d08-material_muywktdm_rtk239: 5–7 |
+| RLHF pipeline | t3-d22-u2-m-r2, t3-d22-u2-s | t3-d08-material_muywktdm_rtk239: 9–10, 14 |
+| DPO và reference log-ratio | t3-d22-u3-m-r2, t3-d22-u3-s, t3-d22-q1-r2 | t3-d08-material_muywktdm_rtk239: 12–15, 28 |
+| Beta và regularization | t3-d22-u4-m-r2, t3-d22-u4-s | t3-d08-material_muywktdm_rtk239: 13, 15–16 |
+| Likelihood displacement và length hacking | t3-d22-u5-m-r2, t3-d22-u5-s | t3-d08-material_muywktdm_rtk239: 16, 38 |
+| Preference pair chất lượng | t3-d22-u6-m-r2, t3-d22-u6-s | t3-d08-material_muywktdm_rtk239: 27, 32 |
+| ORPO objective kết hợp | t3-d22-u7-m-r2, t3-d22-u7-s, t3-d22-q2-r2 | t3-d08-material_muywktdm_rtk239: 21 |
+| SimPO và KTO | t3-d22-u8-m-r2, t3-d22-u8-s | t3-d08-material_muywktdm_rtk239: 19–20 |
+| GRPO bỏ critic chứ không bỏ mọi reward | t3-d22-u9-m-r2, t3-d22-u9-s, t3-d22-q3-r2 | t3-d08-material_muywktdm_rtk239: 23–24 |
+| RLVR và verifier | t3-d22-u10-m-r2, t3-d22-u10-s, t3-d22-q4-r2 | t3-d08-material_muywktdm_rtk239: 24–25, 46 |
+| Iterative DPO và distribution shift | t3-d22-u11-m-r2, t3-d22-u11-s | t3-d08-material_muywktdm_rtk239: 29–30, 44–49 |
+| Constitutional AI | t3-d22-u12-m-r2, t3-d22-u12-s | t3-d08-material_muywktdm_rtk239: 34–35 |
+| RLAIF và recursion của judge | t3-d22-u13-m-r2, t3-d22-u13-s | t3-d08-material_muywktdm_rtk239: 35, 41 |
+| Red team và đánh giá alignment | t3-d22-u14-m-r2, t3-d22-u14-s | t3-d08-material_muywktdm_rtk239: 36, 38–42 |
+| Training strategy theo constraint | t3-d22-u15-m-r2, t3-d22-u15-s | t3-d08-material_muywktdm_rtk239: 51–57, 60 |
+| Model merging và export | t3-d22-u16-m-r2, t3-d22-u16-s | t3-d08-material_muywktdm_rtk239: 58–59 |
 
 ### Bài 23 — LangGraph Deep Agents & Orchestration
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Phổ deterministic–agentic | t3-d23-u1-m, t3-d23-u1-s | t3-d09-material_muzuwq6w_mcxsnq: 3–11 |
-| StateGraph node và edge | t3-d23-u2-m, t3-d23-u2-s | t3-d09-material_muzuwq6w_mcxsnq: 13–14, 21 |
-| Super-step và reducer | t3-d23-u3-m, t3-d23-u3-s, t3-d23-q1 | t3-d09-material_muzuwq6w_mcxsnq: 15–16 |
-| Send và Command | t3-d23-u4-m, t3-d23-u4-s | t3-d09-material_muzuwq6w_mcxsnq: 17–18 |
-| Recursion retry timeout và cache | t3-d23-u5-m, t3-d23-u5-s | t3-d09-material_muzuwq6w_mcxsnq: 19–20 |
-| Durability và checkpointer | t3-d23-u6-m, t3-d23-u6-s | t3-d09-material_muzuwq6w_mcxsnq: 23–25 |
-| Pending writes và partial recovery | t3-d23-u7-m, t3-d23-u7-s | t3-d09-material_muzuwq6w_mcxsnq: 25 |
-| Interrupt và replay node | t3-d23-u8-m, t3-d23-u8-s, t3-d23-q2 | t3-d09-material_muzuwq6w_mcxsnq: 26–28 |
-| Time travel và fork | t3-d23-u9-m, t3-d23-u9-s, t3-d23-q3 | t3-d09-material_muzuwq6w_mcxsnq: 29 |
-| Thread state và cross-thread Store | t3-d23-u10-m, t3-d23-u10-s | t3-d09-material_muzuwq6w_mcxsnq: 23, 30 |
-| Streaming và request chồng | t3-d23-u11-m, t3-d23-u11-s | t3-d09-material_muzuwq6w_mcxsnq: 31–32 |
-| create_agent và middleware | t3-d23-u12-m, t3-d23-u12-s | t3-d09-material_muzuwq6w_mcxsnq: 34–37 |
-| Bốn thao tác context của Deep Agents | t3-d23-u13-m, t3-d23-u13-s | t3-d09-material_muzuwq6w_mcxsnq: 38–41, 43–46 |
-| Backend và persistence | t3-d23-u14-m, t3-d23-u14-s | t3-d09-material_muzuwq6w_mcxsnq: 42, 44–45 |
-| Chọn framework và protocol | t3-d23-u15-m, t3-d23-u15-s | t3-d09-material_muzuwq6w_mcxsnq: 48–58 |
-| Multi-agent một writer | t3-d23-u16-m, t3-d23-u16-s | t3-d09-material_muzuwq6w_mcxsnq: 60–65 |
-| Học và compile orchestration | t3-d23-u17-m, t3-d23-u17-s | t3-d09-material_muzuwq6w_mcxsnq: 66–71 |
-| Hybrid shell và validator lab | t3-d23-u18-m, t3-d23-u18-s | t3-d09-material_muzuwq6w_mcxsnq: 73–79 |
+| Phổ deterministic–agentic | t3-d23-u1-m-r2, t3-d23-u1-s | t3-d09-material_muzuwq6w_mcxsnq: 3–11 |
+| StateGraph node và edge | t3-d23-u2-m-r2, t3-d23-u2-s | t3-d09-material_muzuwq6w_mcxsnq: 13–14, 21 |
+| Super-step và reducer | t3-d23-u3-m-r2, t3-d23-u3-s, t3-d23-q1-r2 | t3-d09-material_muzuwq6w_mcxsnq: 15–16 |
+| Send và Command | t3-d23-u4-m-r2, t3-d23-u4-s | t3-d09-material_muzuwq6w_mcxsnq: 17–18 |
+| Recursion retry timeout và cache | t3-d23-u5-m-r2, t3-d23-u5-s | t3-d09-material_muzuwq6w_mcxsnq: 19–20 |
+| Durability và checkpointer | t3-d23-u6-m-r2, t3-d23-u6-s | t3-d09-material_muzuwq6w_mcxsnq: 23–25 |
+| Pending writes và partial recovery | t3-d23-u7-m-r2, t3-d23-u7-s | t3-d09-material_muzuwq6w_mcxsnq: 25 |
+| Interrupt và replay node | t3-d23-u8-m-r2, t3-d23-u8-s, t3-d23-q2-r2 | t3-d09-material_muzuwq6w_mcxsnq: 26–28 |
+| Time travel và fork | t3-d23-u9-m-r2, t3-d23-u9-s, t3-d23-q3-r2 | t3-d09-material_muzuwq6w_mcxsnq: 29 |
+| Thread state và cross-thread Store | t3-d23-u10-m-r2, t3-d23-u10-s | t3-d09-material_muzuwq6w_mcxsnq: 23, 30 |
+| Streaming và request chồng | t3-d23-u11-m-r2, t3-d23-u11-s | t3-d09-material_muzuwq6w_mcxsnq: 31–32 |
+| create_agent và middleware | t3-d23-u12-m-r2, t3-d23-u12-s | t3-d09-material_muzuwq6w_mcxsnq: 34–37 |
+| Bốn thao tác context của Deep Agents | t3-d23-u13-m-r2, t3-d23-u13-s | t3-d09-material_muzuwq6w_mcxsnq: 38–41, 43–46 |
+| Backend và persistence | t3-d23-u14-m-r2, t3-d23-u14-s | t3-d09-material_muzuwq6w_mcxsnq: 42, 44–45 |
+| Chọn framework và protocol | t3-d23-u15-m-r2, t3-d23-u15-s | t3-d09-material_muzuwq6w_mcxsnq: 48–58 |
+| Multi-agent một writer | t3-d23-u16-m-r2, t3-d23-u16-s | t3-d09-material_muzuwq6w_mcxsnq: 60–65 |
+| Học và compile orchestration | t3-d23-u17-m-r2, t3-d23-u17-s | t3-d09-material_muzuwq6w_mcxsnq: 66–71 |
+| Hybrid shell và validator lab | t3-d23-u18-m-r2, t3-d23-u18-s | t3-d09-material_muzuwq6w_mcxsnq: 73–79 |
 
 ### Bài 24 — RAGAS LLM-as-Judge & Guardrails
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Eval levels và reference | t3-d24-u1-m, t3-d24-u1-s | t3-d11-c155859b0e898e48: 7–11; t3-d11-3b5684caa68e2e9a: 2–3 |
-| Component và end-to-end eval | t3-d24-u2-m, t3-d24-u2-s | t3-d11-c155859b0e898e48: 12–14; t3-d11-3b5684caa68e2e9a: 3 |
-| Faithfulness | t3-d24-u3-m, t3-d24-u3-s, t3-d24-q1 | t3-d11-c155859b0e898e48: 16–17; t3-d11-3b5684caa68e2e9a: 4 |
-| Answer relevancy | t3-d24-u4-m, t3-d24-u4-s | t3-d11-c155859b0e898e48: 18; t3-d11-3b5684caa68e2e9a: 4, 11 |
-| Context precision và ranking | t3-d24-u5-m, t3-d24-u5-s | t3-d11-c155859b0e898e48: 19; t3-d11-3b5684caa68e2e9a: 4, 11 |
-| Context recall | t3-d24-u6-m, t3-d24-u6-s, t3-d24-q2 | t3-d11-c155859b0e898e48: 20; t3-d11-3b5684caa68e2e9a: 4, 11 |
-| Synthetic eval set và targets | t3-d24-u7-m, t3-d24-u7-s | t3-d11-c155859b0e898e48: 22–24; t3-d11-3b5684caa68e2e9a: 5 |
-| Pairwise và position bias | t3-d24-u8-m, t3-d24-u8-s, t3-d24-q3 | t3-d11-c155859b0e898e48: 28–30; t3-d11-3b5684caa68e2e9a: 5–6 |
-| Length style và self-preference bias | t3-d24-u9-m, t3-d24-u9-s | t3-d11-c155859b0e898e48: 31–33; t3-d11-3b5684caa68e2e9a: 5–6 |
-| Calibration và tiered judge | t3-d24-u10-m, t3-d24-u10-s | t3-d11-c155859b0e898e48: 34–35; t3-d11-3b5684caa68e2e9a: 6 |
-| Hallucination taxonomy và consistency | t3-d24-u11-m, t3-d24-u11-s | t3-d11-c155859b0e898e48: 37–38; t3-d11-3b5684caa68e2e9a: 6 |
-| NLI và semantic entropy | t3-d24-u12-m, t3-d24-u12-s | t3-d11-c155859b0e898e48: 39–41; t3-d11-3b5684caa68e2e9a: 6 |
-| Guardrail bốn trục nhiều lớp | t3-d24-u13-m, t3-d24-u13-s | t3-d11-c155859b0e898e48: 43–45; t3-d11-3b5684caa68e2e9a: 7 |
-| PII và input validation | t3-d24-u14-m, t3-d24-u14-s | t3-d11-c155859b0e898e48: 46–48; t3-d11-3b5684caa68e2e9a: 7 |
-| Indirect injection và session poisoning | t3-d24-u15-m, t3-d24-u15-s | t3-d11-c155859b0e898e48: 49–54; t3-d11-3b5684caa68e2e9a: 8 |
-| Output rails và over-filtering | t3-d24-u16-m, t3-d24-u16-s | t3-d11-c155859b0e898e48: 55–59; t3-d11-3b5684caa68e2e9a: 7–8 |
-| CI eval gates và lab evidence | t3-d24-u17-m, t3-d24-u17-s | t3-d11-c155859b0e898e48: 61–70; t3-d11-3b5684caa68e2e9a: 9–10 |
+| Eval levels và reference | t3-d24-u1-m-r2, t3-d24-u1-s | t3-d11-c155859b0e898e48: 7–11; t3-d11-3b5684caa68e2e9a: 2–3 |
+| Component và end-to-end eval | t3-d24-u2-m-r2, t3-d24-u2-s | t3-d11-c155859b0e898e48: 12–14; t3-d11-3b5684caa68e2e9a: 3 |
+| Faithfulness | t3-d24-u3-m-r2, t3-d24-u3-s, t3-d24-q1-r2 | t3-d11-c155859b0e898e48: 16–17; t3-d11-3b5684caa68e2e9a: 4 |
+| Answer relevancy | t3-d24-u4-m-r2, t3-d24-u4-s | t3-d11-c155859b0e898e48: 18; t3-d11-3b5684caa68e2e9a: 4, 11 |
+| Context precision và ranking | t3-d24-u5-m-r2, t3-d24-u5-s | t3-d11-c155859b0e898e48: 19; t3-d11-3b5684caa68e2e9a: 4, 11 |
+| Context recall | t3-d24-u6-m-r2, t3-d24-u6-s, t3-d24-q2-r2 | t3-d11-c155859b0e898e48: 20; t3-d11-3b5684caa68e2e9a: 4, 11 |
+| Synthetic eval set và targets | t3-d24-u7-m-r2, t3-d24-u7-s | t3-d11-c155859b0e898e48: 22–24; t3-d11-3b5684caa68e2e9a: 5 |
+| Pairwise và position bias | t3-d24-u8-m-r2, t3-d24-u8-s, t3-d24-q3-r2 | t3-d11-c155859b0e898e48: 28–30; t3-d11-3b5684caa68e2e9a: 5–6 |
+| Length style và self-preference bias | t3-d24-u9-m-r2, t3-d24-u9-s | t3-d11-c155859b0e898e48: 31–33; t3-d11-3b5684caa68e2e9a: 5–6 |
+| Calibration và tiered judge | t3-d24-u10-m-r2, t3-d24-u10-s | t3-d11-c155859b0e898e48: 34–35; t3-d11-3b5684caa68e2e9a: 6 |
+| Hallucination taxonomy và consistency | t3-d24-u11-m-r2, t3-d24-u11-s | t3-d11-c155859b0e898e48: 37–38; t3-d11-3b5684caa68e2e9a: 6 |
+| NLI và semantic entropy | t3-d24-u12-m-r2, t3-d24-u12-s | t3-d11-c155859b0e898e48: 39–41; t3-d11-3b5684caa68e2e9a: 6 |
+| Guardrail bốn trục nhiều lớp | t3-d24-u13-m-r2, t3-d24-u13-s | t3-d11-c155859b0e898e48: 43–45; t3-d11-3b5684caa68e2e9a: 7 |
+| PII và input validation | t3-d24-u14-m-r2, t3-d24-u14-s | t3-d11-c155859b0e898e48: 46–48; t3-d11-3b5684caa68e2e9a: 7 |
+| Indirect injection và session poisoning | t3-d24-u15-m-r2, t3-d24-u15-s | t3-d11-c155859b0e898e48: 49–54; t3-d11-3b5684caa68e2e9a: 8 |
+| Output rails và over-filtering | t3-d24-u16-m-r2, t3-d24-u16-s | t3-d11-c155859b0e898e48: 55–59; t3-d11-3b5684caa68e2e9a: 7–8 |
+| CI eval gates và lab evidence | t3-d24-u17-m-r2, t3-d24-u17-s | t3-d11-c155859b0e898e48: 61–70; t3-d11-3b5684caa68e2e9a: 9–10 |
 
 ### Bài 25 — Reliability Circuit Breakers & Caching
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Failure modes và silent degradation | t3-d25-u1-m, t3-d25-u1-s | t3-d12-material_mv4zuq2z_nbiyto: 7–16 |
-| Retry backoff và jitter | t3-d25-u2-m, t3-d25-u2-s | t3-d12-material_mv4zuq2z_nbiyto: 10–12 |
-| Circuit breaker ba trạng thái | t3-d25-u3-m, t3-d25-u3-s, t3-d25-q1 | t3-d12-material_mv4zuq2z_nbiyto: 18–20 |
-| Trip logic và scope lỗi | t3-d25-u4-m, t3-d25-u4-s | t3-d12-material_mv4zuq2z_nbiyto: 19–20 |
-| Half-open probe và state phân tán | t3-d25-u5-m, t3-d25-u5-s | t3-d12-material_mv4zuq2z_nbiyto: 20–21, 66–67 |
-| Timeout bulkhead và hedging | t3-d25-u6-m, t3-d25-u6-s | t3-d12-material_mv4zuq2z_nbiyto: 22 |
-| Gateway và fallback ladder | t3-d25-u7-m, t3-d25-u7-s | t3-d12-material_mv4zuq2z_nbiyto: 27–30, 32–35 |
-| Idempotency khi retry action | t3-d25-u8-m, t3-d25-u8-s, t3-d25-q2 | t3-d12-material_mv4zuq2z_nbiyto: 31 |
-| Ba tầng cache | t3-d25-u9-m, t3-d25-u9-s | t3-d12-material_mv4zuq2z_nbiyto: 37–39 |
-| Semantic false hit | t3-d25-u10-m, t3-d25-u10-s, t3-d25-q3 | t3-d12-material_mv4zuq2z_nbiyto: 39–41 |
-| TTL invalidation và ACL cache | t3-d25-u11-m, t3-d25-u11-s | t3-d12-material_mv4zuq2z_nbiyto: 37–41, 66–67 |
-| Cost budgeting | t3-d25-u12-m, t3-d25-u12-s | t3-d12-material_mv4zuq2z_nbiyto: 42–45 |
-| SLI SLO SLA và burn rate | t3-d25-u13-m, t3-d25-u13-s | t3-d12-material_mv4zuq2z_nbiyto: 47–49 |
-| Tracing chaos và simulator evidence | t3-d25-u14-m, t3-d25-u14-s | t3-d12-material_mv4zuq2z_nbiyto: 49–60 |
+| Failure modes và silent degradation | t3-d25-u1-m-r2, t3-d25-u1-s | t3-d12-material_mv4zuq2z_nbiyto: 7–16 |
+| Retry backoff và jitter | t3-d25-u2-m-r2, t3-d25-u2-s | t3-d12-material_mv4zuq2z_nbiyto: 10–12 |
+| Circuit breaker ba trạng thái | t3-d25-u3-m-r2, t3-d25-u3-s, t3-d25-q1-r2 | t3-d12-material_mv4zuq2z_nbiyto: 18–20 |
+| Trip logic và scope lỗi | t3-d25-u4-m-r2, t3-d25-u4-s | t3-d12-material_mv4zuq2z_nbiyto: 19–20 |
+| Half-open probe và state phân tán | t3-d25-u5-m-r2, t3-d25-u5-s | t3-d12-material_mv4zuq2z_nbiyto: 20–21, 66–67 |
+| Timeout bulkhead và hedging | t3-d25-u6-m-r2, t3-d25-u6-s | t3-d12-material_mv4zuq2z_nbiyto: 22 |
+| Gateway và fallback ladder | t3-d25-u7-m-r2, t3-d25-u7-s | t3-d12-material_mv4zuq2z_nbiyto: 27–30, 32–35 |
+| Idempotency khi retry action | t3-d25-u8-m-r2, t3-d25-u8-s, t3-d25-q2-r2 | t3-d12-material_mv4zuq2z_nbiyto: 31 |
+| Ba tầng cache | t3-d25-u9-m-r2, t3-d25-u9-s | t3-d12-material_mv4zuq2z_nbiyto: 37–39 |
+| Semantic false hit | t3-d25-u10-m-r2, t3-d25-u10-s, t3-d25-q3-r2 | t3-d12-material_mv4zuq2z_nbiyto: 39–41 |
+| TTL invalidation và ACL cache | t3-d25-u11-m-r2, t3-d25-u11-s | t3-d12-material_mv4zuq2z_nbiyto: 37–41, 66–67 |
+| Cost budgeting | t3-d25-u12-m-r2, t3-d25-u12-s | t3-d12-material_mv4zuq2z_nbiyto: 42–45 |
+| SLI SLO SLA và burn rate | t3-d25-u13-m-r2, t3-d25-u13-s | t3-d12-material_mv4zuq2z_nbiyto: 47–49 |
+| Tracing chaos và simulator evidence | t3-d25-u14-m-r2, t3-d25-u14-s | t3-d12-material_mv4zuq2z_nbiyto: 49–60 |
 
 ### Bài 26 — Function Calling & MCP
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Model đề xuất app thực thi | t3-d26-u1-m, t3-d26-u1-s, t3-d26-q1 | t3-d13-material_mv6ej0k2_72qtja: 4–11 |
-| Schema tool và vòng observation | t3-d26-u2-m, t3-d26-u2-s | t3-d13-material_mv6ej0k2_72qtja: 8–12, 18–24 |
-| Host client server MCP | t3-d26-u3-m, t3-d26-u3-s | t3-d13-material_mv6ej0k2_72qtja: 14–16 |
-| Tools resources prompts | t3-d26-u4-m, t3-d26-u4-s | t3-d13-material_mv6ej0k2_72qtja: 15, 36 |
-| API và protocol integration | t3-d26-u5-m, t3-d26-u5-s | t3-d13-material_mv6ej0k2_72qtja: 13, 16–17, 20–21 |
-| Discovery registry và capability | t3-d26-u6-m, t3-d26-u6-s | t3-d13-material_mv6ej0k2_72qtja: 18–20, 32–34 |
-| MCP authentication authorization | t3-d26-u7-m, t3-d26-u7-s, t3-d26-q3 | t3-d13-material_mv6ej0k2_72qtja: 29–31; t3-d16-material_mvabb0px_ucd74d: 10 |
-| Versioning và deprecation | t3-d26-u8-m, t3-d26-u8-s, t3-d26-q2 | t3-d13-material_mv6ej0k2_72qtja: 35–37 |
-| ADK adapter và async tool | t3-d26-u9-m, t3-d26-u9-s | t3-d13-material_mv6ej0k2_72qtja: 39–41 |
-| Deploy transport và health | t3-d26-u10-m, t3-d26-u10-s | t3-d13-material_mv6ej0k2_72qtja: 39, 42–44 |
-| Đăng ký server và tool self-description | t3-d26-u11-m, t3-d26-u11-s | t3-d13-material_mv6ej0k2_72qtja: 25–27 |
-| Contract tests qua transport và version | t3-d26-u12-m, t3-d26-u12-s | t3-d13-material_mv6ej0k2_72qtja: 29–37, 46 |
+| Model đề xuất app thực thi | t3-d26-u1-m-r2, t3-d26-u1-s, t3-d26-q1-r2 | t3-d13-material_mv6ej0k2_72qtja: 4–11 |
+| Schema tool và vòng observation | t3-d26-u2-m-r2, t3-d26-u2-s | t3-d13-material_mv6ej0k2_72qtja: 8–12, 18–24 |
+| Host client server MCP | t3-d26-u3-m-r2, t3-d26-u3-s | t3-d13-material_mv6ej0k2_72qtja: 14–16 |
+| Tools resources prompts | t3-d26-u4-m-r2, t3-d26-u4-s | t3-d13-material_mv6ej0k2_72qtja: 15, 36 |
+| API và protocol integration | t3-d26-u5-m-r2, t3-d26-u5-s | t3-d13-material_mv6ej0k2_72qtja: 13, 16–17, 20–21 |
+| Discovery registry và capability | t3-d26-u6-m-r2, t3-d26-u6-s | t3-d13-material_mv6ej0k2_72qtja: 18–20, 32–34 |
+| MCP authentication authorization | t3-d26-u7-m-r2, t3-d26-u7-s, t3-d26-q3-r2 | t3-d13-material_mv6ej0k2_72qtja: 29–31; t3-d16-material_mvabb0px_ucd74d: 10 |
+| Versioning và deprecation | t3-d26-u8-m-r2, t3-d26-u8-s, t3-d26-q2-r2 | t3-d13-material_mv6ej0k2_72qtja: 35–37 |
+| ADK adapter và async tool | t3-d26-u9-m-r2, t3-d26-u9-s | t3-d13-material_mv6ej0k2_72qtja: 39–41 |
+| Deploy transport và health | t3-d26-u10-m-r2, t3-d26-u10-s | t3-d13-material_mv6ej0k2_72qtja: 39, 42–44 |
+| Đăng ký server và tool self-description | t3-d26-u11-m-r2, t3-d26-u11-s | t3-d13-material_mv6ej0k2_72qtja: 25–27 |
+| Contract tests qua transport và version | t3-d26-u12-m-r2, t3-d26-u12-s | t3-d13-material_mv6ej0k2_72qtja: 29–37, 46 |
 
 ### Bài 27 — Human-in-the-Loop UX
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Action assessment và cost of error | t3-d27-u1-m, t3-d27-u1-s | t3-d14-material_mv8f2hgl_z9gpxa: 7–14 |
-| HITL và human-on-the-loop | t3-d27-u2-m, t3-d27-u2-s | t3-d14-material_mv8f2hgl_z9gpxa: 16–18 |
-| Approval và clarification | t3-d27-u3-m, t3-d27-u3-s | t3-d14-material_mv8f2hgl_z9gpxa: 19–20 |
-| Escalation checkpoint và edit | t3-d27-u4-m, t3-d27-u4-s | t3-d14-material_mv8f2hgl_z9gpxa: 21–23 |
-| Hard rules và confidence routing | t3-d27-u5-m, t3-d27-u5-s | t3-d14-material_mv8f2hgl_z9gpxa: 24–25, 33–36 |
-| Logprob và overconfidence | t3-d27-u6-m, t3-d27-u6-s, t3-d27-q1 | t3-d14-material_mv8f2hgl_z9gpxa: 27–32 |
-| Checkpoint thread và durability HITL | t3-d27-u7-m, t3-d27-u7-s | t3-d14-material_mv8f2hgl_z9gpxa: 38–40, 44–48 |
-| Interrupt trước và sau action | t3-d27-u8-m, t3-d27-u8-s | t3-d14-material_mv8f2hgl_z9gpxa: 41–48; t3-d09-material_muzuwq6w_mcxsnq: 26–27 |
-| Approval gắn payload và concurrency | t3-d27-u9-m, t3-d27-u9-s, t3-d27-q3 | t3-d14-material_mv8f2hgl_z9gpxa: 47–48, 55–58; t3-d16-material_mvabb0px_ucd74d: 12 |
-| TTL timeout và reviewer vắng mặt | t3-d27-u10-m, t3-d27-u10-s, t3-d27-q2 | t3-d14-material_mv8f2hgl_z9gpxa: 49–51 |
-| Reject và replan có lý do | t3-d27-u11-m, t3-d27-u11-s | t3-d14-material_mv8f2hgl_z9gpxa: 52 |
-| Action card diff và evidence | t3-d27-u12-m, t3-d27-u12-s | t3-d14-material_mv8f2hgl_z9gpxa: 54–58, 63 |
-| Alert fatigue và batch approvals | t3-d27-u13-m, t3-d27-u13-s | t3-d14-material_mv8f2hgl_z9gpxa: 59–62 |
-| Audit trail và replay an toàn | t3-d27-u14-m, t3-d27-u14-s | t3-d14-material_mv8f2hgl_z9gpxa: 65–67 |
-| Decision metrics và progressive autonomy | t3-d27-u15-m, t3-d27-u15-s | t3-d14-material_mv8f2hgl_z9gpxa: 68–70 |
-| HITL feedback thành preference data | t3-d27-u16-m, t3-d27-u16-s | t3-d14-material_mv8f2hgl_z9gpxa: 71–74 |
+| Action assessment và cost of error | t3-d27-u1-m-r2, t3-d27-u1-s | t3-d14-material_mv8f2hgl_z9gpxa: 7–14 |
+| HITL và human-on-the-loop | t3-d27-u2-m-r2, t3-d27-u2-s | t3-d14-material_mv8f2hgl_z9gpxa: 16–18 |
+| Approval và clarification | t3-d27-u3-m-r2, t3-d27-u3-s | t3-d14-material_mv8f2hgl_z9gpxa: 19–20 |
+| Escalation checkpoint và edit | t3-d27-u4-m-r2, t3-d27-u4-s | t3-d14-material_mv8f2hgl_z9gpxa: 21–23 |
+| Hard rules và confidence routing | t3-d27-u5-m-r2, t3-d27-u5-s | t3-d14-material_mv8f2hgl_z9gpxa: 24–25, 33–36 |
+| Logprob và overconfidence | t3-d27-u6-m-r2, t3-d27-u6-s, t3-d27-q1-r2 | t3-d14-material_mv8f2hgl_z9gpxa: 27–32 |
+| Checkpoint thread và durability HITL | t3-d27-u7-m-r2, t3-d27-u7-s | t3-d14-material_mv8f2hgl_z9gpxa: 38–40, 44–48 |
+| Interrupt trước và sau action | t3-d27-u8-m-r2, t3-d27-u8-s | t3-d14-material_mv8f2hgl_z9gpxa: 41–48; t3-d09-material_muzuwq6w_mcxsnq: 26–27 |
+| Approval gắn payload và concurrency | t3-d27-u9-m-r2, t3-d27-u9-s, t3-d27-q3-r2 | t3-d14-material_mv8f2hgl_z9gpxa: 47–48, 55–58; t3-d16-material_mvabb0px_ucd74d: 12 |
+| TTL timeout và reviewer vắng mặt | t3-d27-u10-m-r2, t3-d27-u10-s, t3-d27-q2-r2 | t3-d14-material_mv8f2hgl_z9gpxa: 49–51 |
+| Reject và replan có lý do | t3-d27-u11-m-r2, t3-d27-u11-s | t3-d14-material_mv8f2hgl_z9gpxa: 52 |
+| Action card diff và evidence | t3-d27-u12-m-r2, t3-d27-u12-s | t3-d14-material_mv8f2hgl_z9gpxa: 54–58, 63 |
+| Alert fatigue và batch approvals | t3-d27-u13-m-r2, t3-d27-u13-s | t3-d14-material_mv8f2hgl_z9gpxa: 59–62 |
+| Audit trail và replay an toàn | t3-d27-u14-m-r2, t3-d27-u14-s | t3-d14-material_mv8f2hgl_z9gpxa: 65–67 |
+| Decision metrics và progressive autonomy | t3-d27-u15-m-r2, t3-d27-u15-s | t3-d14-material_mv8f2hgl_z9gpxa: 68–70 |
+| HITL feedback thành preference data | t3-d27-u16-m-r2, t3-d27-u16-s | t3-d14-material_mv8f2hgl_z9gpxa: 71–74 |
 
 ### Bài 28 — Workshop Production & Real-World AI
 
 | Chủ đề | Câu hỏi | Nguồn và trang PDF |
 |---|---|---|
-| Integration seams và contracts | t3-d28-u1-m, t3-d28-u1-s | t3-d16-4e9a3912938d36c6: 5–10, 19–21; t3-d16-material_mvabb0px_ucd74d: 5, 8–10 |
-| Production checklist có điều kiện | t3-d28-u2-m, t3-d28-u2-s | t3-d16-4e9a3912938d36c6: 9–10; t3-d16-material_mvabb0px_ucd74d: 14–15 |
-| Bốn chiều benchmark | t3-d28-u3-m, t3-d28-u3-s | t3-d16-4e9a3912938d36c6: 12–13; t3-d16-material_mvabb0px_ucd74d: 19–20 |
-| Outcome trajectory và pass metrics | t3-d28-u4-m, t3-d28-u4-s, t3-d28-q1 | t3-d16-material_mvabb0px_ucd74d: 21 |
-| ADRs runbook và API specs | t3-d28-u5-m, t3-d28-u5-s | t3-d16-4e9a3912938d36c6: 15; t3-d16-material_mvabb0px_ucd74d: 23 |
-| Peer review và artifact proof | t3-d28-u6-m, t3-d28-u6-s | t3-d16-4e9a3912938d36c6: 17, 23, 26; t3-d16-material_mvabb0px_ucd74d: 24 |
-| Release bundle và ownership | t3-d28-u7-m, t3-d28-u7-s | t3-d16-material_mvabb0px_ucd74d: 16–17 |
-| Canary shadow và rollback | t3-d28-u8-m, t3-d28-u8-s | t3-d16-material_mvabb0px_ucd74d: 18; t3-d16-4e9a3912938d36c6: 21, 25 |
-| E2E action verification | t3-d28-u9-m, t3-d28-u9-s | t3-d16-material_mvabb0px_ucd74d: 9–12, 25 |
-| Voice turn-taking và barge-in | t3-d28-u10-m, t3-d28-u10-s | t3-d16-material_mvabb0px_ucd74d: 26 |
-| Voice capacity và call cost | t3-d28-u11-m, t3-d28-u11-s, t3-d28-q2 | t3-d16-material_mvabb0px_ucd74d: 27, 30 |
-| Voice inbound outbound và meeting | t3-d28-u12-m, t3-d28-u12-s | t3-d16-material_mvabb0px_ucd74d: 29–31 |
-| Real-world system bốn luồng | t3-d28-u13-m, t3-d28-u13-s | t3-d16-214d48da68c4c97a: 3–5, 42–44, 50–51 |
-| ADAS ODD và safety envelope | t3-d28-u14-m, t3-d28-u14-s | t3-d16-214d48da68c4c97a: 7–11 |
-| Delivery robot và remote assistance | t3-d28-u15-m, t3-d28-u15-s | t3-d16-214d48da68c4c97a: 13–17 |
-| CCTV event-first và privacy | t3-d28-u16-m, t3-d28-u16-s | t3-d16-214d48da68c4c97a: 19–23 |
-| Video semantic search | t3-d28-u17-m, t3-d28-u17-s | t3-d16-214d48da68c4c97a: 19–23 |
-| Humanoid slow reasoning fast control | t3-d28-u18-m, t3-d28-u18-s, t3-d28-q3 | t3-d16-214d48da68c4c97a: 25–30 |
-| Robotics data và sim-to-real | t3-d28-u19-m, t3-d28-u19-s | t3-d16-214d48da68c4c97a: 26–30, 39–40 |
-| GeoAI preprocessing và temporal baseline | t3-d28-u20-m, t3-d28-u20-s, t3-d28-q4 | t3-d16-214d48da68c4c97a: 32–36 |
-| GeoAI tasking và uncertainty | t3-d28-u21-m, t3-d28-u21-s | t3-d16-214d48da68c4c97a: 33–36 |
-| Risk-based validation và data flywheel | t3-d28-u22-m, t3-d28-u22-s | t3-d16-214d48da68c4c97a: 37–41; t3-d16-4e9a3912938d36c6: 20–21 |
+| Integration seams và contracts | t3-d28-u1-m-r2, t3-d28-u1-s | t3-d16-4e9a3912938d36c6: 5–10, 19–21; t3-d16-material_mvabb0px_ucd74d: 5, 8–10 |
+| Production checklist có điều kiện | t3-d28-u2-m-r2, t3-d28-u2-s | t3-d16-4e9a3912938d36c6: 9–10; t3-d16-material_mvabb0px_ucd74d: 14–15 |
+| Bốn chiều benchmark | t3-d28-u3-m-r2, t3-d28-u3-s | t3-d16-4e9a3912938d36c6: 12–13; t3-d16-material_mvabb0px_ucd74d: 19–20 |
+| Outcome trajectory và pass metrics | t3-d28-u4-m-r2, t3-d28-u4-s, t3-d28-q1-r2 | t3-d16-material_mvabb0px_ucd74d: 21 |
+| ADRs runbook và API specs | t3-d28-u5-m-r2, t3-d28-u5-s | t3-d16-4e9a3912938d36c6: 15; t3-d16-material_mvabb0px_ucd74d: 23 |
+| Peer review và artifact proof | t3-d28-u6-m-r2, t3-d28-u6-s | t3-d16-4e9a3912938d36c6: 17, 23, 26; t3-d16-material_mvabb0px_ucd74d: 24 |
+| Release bundle và ownership | t3-d28-u7-m-r2, t3-d28-u7-s | t3-d16-material_mvabb0px_ucd74d: 16–17 |
+| Canary shadow và rollback | t3-d28-u8-m-r2, t3-d28-u8-s | t3-d16-material_mvabb0px_ucd74d: 18; t3-d16-4e9a3912938d36c6: 21, 25 |
+| E2E action verification | t3-d28-u9-m-r2, t3-d28-u9-s | t3-d16-material_mvabb0px_ucd74d: 9–12, 25 |
+| Voice turn-taking và barge-in | t3-d28-u10-m-r2, t3-d28-u10-s | t3-d16-material_mvabb0px_ucd74d: 26 |
+| Voice capacity và call cost | t3-d28-u11-m-r2, t3-d28-u11-s, t3-d28-q2-r2 | t3-d16-material_mvabb0px_ucd74d: 27, 30 |
+| Voice inbound outbound và meeting | t3-d28-u12-m-r2, t3-d28-u12-s | t3-d16-material_mvabb0px_ucd74d: 29–31 |
+| Real-world system bốn luồng | t3-d28-u13-m-r2, t3-d28-u13-s | t3-d16-214d48da68c4c97a: 3–5, 42–44, 50–51 |
+| ADAS ODD và safety envelope | t3-d28-u14-m-r2, t3-d28-u14-s | t3-d16-214d48da68c4c97a: 7–11 |
+| Delivery robot và remote assistance | t3-d28-u15-m-r2, t3-d28-u15-s | t3-d16-214d48da68c4c97a: 13–17 |
+| CCTV event-first và privacy | t3-d28-u16-m-r2, t3-d28-u16-s | t3-d16-214d48da68c4c97a: 19–23 |
+| Video semantic search | t3-d28-u17-m-r2, t3-d28-u17-s | t3-d16-214d48da68c4c97a: 19–23 |
+| Humanoid slow reasoning fast control | t3-d28-u18-m-r2, t3-d28-u18-s, t3-d28-q3-r2 | t3-d16-214d48da68c4c97a: 25–30 |
+| Robotics data và sim-to-real | t3-d28-u19-m-r2, t3-d28-u19-s | t3-d16-214d48da68c4c97a: 26–30, 39–40 |
+| GeoAI preprocessing và temporal baseline | t3-d28-u20-m-r2, t3-d28-u20-s, t3-d28-q4-r2 | t3-d16-214d48da68c4c97a: 32–36 |
+| GeoAI tasking và uncertainty | t3-d28-u21-m-r2, t3-d28-u21-s | t3-d16-214d48da68c4c97a: 33–36 |
+| Risk-based validation và data flywheel | t3-d28-u22-m-r2, t3-d28-u22-s | t3-d16-214d48da68c4c97a: 37–41; t3-d16-4e9a3912938d36c6: 20–21 |

@@ -28,6 +28,7 @@ jobs:
       - name: Check lesson overviews and learning flows
         run: |
           node scripts/validate-overviews.cjs
+          node scripts/validate-question-quality.cjs
           node scripts/smoke-ui.cjs
           node scripts/smoke-track3.cjs
 

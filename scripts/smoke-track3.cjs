@@ -5,7 +5,7 @@ const legacy='{"1:all":{"submitted":true,"answers":{"d1-q1":{"choice":0}}}}';
 const storage=new Map([['phase1-study-v2',phase1],['phase1-ai-quiz-v1',legacy]]);
 const html=fs.readFileSync(path.join(__dirname,'../dist/track3.html'),'utf8');
 const scripts=[...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1]);
-assert.deepEqual(scripts,['track3-sources.js','track3-data.js','lesson-overviews.js','learning-core.js','app.js']);
+assert.deepEqual(scripts,['track3-sources.js','track3-data.js','question-revisions.js','lesson-overviews.js','learning-core.js','app.js']);
 assert.match(html,/href="index.html"/);assert.match(html,/href="track3-coverage.html"/);
 for(const id of ['app','brand','mobile-brand','lesson-nav','breadcrumb','study-nav','mobile-study-nav','reset-button'])assert.ok(html.includes(`id="${id}"`));
 function boot(){
@@ -84,4 +84,8 @@ ui.click('resume',{id:s.id});assert.match(ui.html(),/HẾT GIỜ/);ui.click('rev
 ui.element('reset-button').handlers.click();
 assert.equal(Object.keys(ui.saved().runs).length,0);assert.equal(Object.keys(ui.saved().reviews).length,0);assert.equal(Object.keys(ui.saved().cards).length,0);
 assert.equal(storage.get('phase1-study-v2'),phase1);assert.equal(storage.get('phase1-ai-quiz-v1'),legacy);
+ui.click('practice-hub');ui.change('scope-day','all');ui.change('scope-topic','all');ui.change('scope-type','objective');ui.change('scope-level','apply');ui.click('begin-practice');
+state=ui.saved();s=state.runs[state.activeRun];assert.equal(s.questionIds.length,270);assert.ok(s.questionIds.every(id=>all.find(q=>q.id===id).revision===2));
+ui.click('exam-hub');ui.element('exam-count').value='20';ui.element('exam-essays').value='0';ui.element('exam-minutes').value='2';ui.click('begin-exam');
+state=ui.saved();s=state.runs[state.activeRun];assert.equal(s.questionIds.length,20);assert.ok(s.questionIds.every(id=>all.find(q=>q.id===id).level==='apply'));
 console.log('OK Track 3: 228 chủ đề mở được; chọn một/nhiều, giải thích, tự luận có hướng dẫn, flashcard, câu cần ôn, đề thi và deadline; tiến độ Phase 1 giữ nguyên.');
