@@ -5,7 +5,7 @@ const legacy='{"1:all":{"submitted":true,"answers":{"d1-q1":{"choice":0}}}}';
 const storage=new Map([['phase1-study-v2',phase1],['phase1-ai-quiz-v1',legacy]]);
 const html=fs.readFileSync(path.join(__dirname,'../dist/track3.html'),'utf8');
 const scripts=[...html.matchAll(/<script src="([^"]+)"/g)].map(m=>m[1]);
-assert.deepEqual(scripts,['track3-sources.js','track3-data.js','question-revisions.js','lesson-overviews.js','learning-core.js','app.js']);
+assert.deepEqual(scripts,['track3-sources.js','track3-data.js','question-revisions.js','lesson-overviews.js','learning-core.js','answer-explanations.js','app.js']);
 assert.match(html,/href="index.html"/);assert.match(html,/href="track3-coverage.html"/);
 for(const id of ['app','brand','mobile-brand','lesson-nav','breadcrumb','study-nav','mobile-study-nav','reset-button'])assert.ok(html.includes(`id="${id}"`));
 function boot(){
@@ -47,14 +47,15 @@ for(const l of lessons){
 ui.click('intro',{day:'16'});ui.click('topic-practice',{topicIndex:'0'});ui.click('begin-practice');
 let state=ui.saved(),s=state.runs[state.activeRun],multi=all.find(q=>q.id===s.questionIds[0]),essay=all.find(q=>q.id===s.questionIds[1]);
 assert.equal(s.questionIds.length,2);assert.equal(multi.type,'multi');assert.ok(essay.scenario);
-assert.ok(!ui.html().includes(multi.why));
+assert.ok(!ui.html().includes(multi.why));assert.ok(!ui.html().includes('Đáp án đúng:'));
 ui.click('choose',{choice:String(multi.answers[0])});ui.click('check-answer');
-assert.match(ui.html(),/CẦN ÔN/);assert.ok(ui.html().includes(multi.why));assert.equal(ui.saved().reviews[multi.id].wrong,true);
+assert.match(ui.html(),/CẦN ÔN/);assert.match(ui.html(),/Đáp án đúng:/);assert.match(ui.html(),/1\. Bản chất kiến thức/);assert.match(ui.html(),/Ghi nhớ:/);assert.equal(ui.saved().reviews[multi.id].wrong,true);
 ui.click('bookmark',{qid:multi.id});assert.equal(ui.saved().reviews[multi.id].manual,true);
 ui.click('goto',{index:'1'});assert.match(ui.html(),/Hướng dẫn viết/);assert.ok(!ui.html().includes(essay.sample));
 assert.ok(ui.html().includes(essay.guide.situation));ui.click('insert-template');ui.click('check-answer');assert.match(ui.html(),/Hãy viết hoặc chọn/);
+assert.ok(!ui.html().includes(essay.guide.verify));assert.ok(!ui.html().includes('Hướng trả lời tham khảo'));
 ui.listeners.input({target:{id:'essay-answer',value:'Tôi kiểm trace để tìm bước sai, sửa routing và đo lại trên bộ case có nhãn.'}});
-ui.click('check-answer');assert.ok(ui.html().includes(essay.sample));assert.equal(ui.saved().reviews[essay.id].essayPending,true);
+ui.click('check-answer');assert.match(ui.html(),/Hướng trả lời tham khảo/);assert.match(ui.html(),/2\. Ví dụ thực tế/);assert.equal(ui.saved().reviews[essay.id].essayPending,true);
 for(let i=0;i<essay.rubric.length;i++)ui.listeners.change({target:{dataset:{qid:essay.id,rubric:String(i)},checked:true,matches(){return true;}}});
 assert.equal(ui.saved().reviews[essay.id].essayPending,false);ui.click('submit');
 ui.click('practice-one',{qid:multi.id});for(const choice of multi.answers)ui.click('choose',{choice:String(choice)});ui.click('check-answer');
@@ -76,7 +77,7 @@ ui.click('exam-hub');ui.change('scope-day','all');ui.change('scope-topic','all')
 ui.element('exam-count').value='26';ui.element('exam-essays').value='2';ui.element('exam-minutes').value='1';ui.click('begin-exam');
 state=ui.saved();s=state.runs[state.activeRun];assert.equal(s.questionIds.length,28);
 assert.equal(s.questionIds.filter(id=>all.find(q=>q.id===id).type==='essay').length,2);
-assert.ok(!ui.html().includes('Hướng dẫn viết'));assert.ok(!ui.html().includes('Vì sao:</strong>'));
+assert.ok(!ui.html().includes('Hướng dẫn viết'));assert.ok(!ui.html().includes('Đáp án đúng:'));assert.ok(!ui.html().includes('Bản chất kiến thức'));
 const deadline=s.deadline;ui=boot();ui.click('resume',{id:s.id});assert.equal(ui.saved().runs[s.id].deadline,deadline);assert.equal(ui.intervals.size,1);
 clock.now=deadline+1;for(const tick of [...ui.intervals.values()])tick();assert.equal(ui.saved().runs[s.id].timedOut,true);
 ui.click('resume',{id:s.id});assert.match(ui.html(),/HẾT GIỜ/);ui.click('review');assert.match(ui.html(),/Câu cần ôn/);

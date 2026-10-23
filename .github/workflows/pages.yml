@@ -29,6 +29,7 @@ jobs:
         run: |
           node scripts/validate-overviews.cjs
           node scripts/validate-question-quality.cjs
+          node scripts/validate-explanations.cjs
           node scripts/smoke-ui.cjs
           node scripts/smoke-track3.cjs
 

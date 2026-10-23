@@ -11,7 +11,7 @@ function boot(){
   class FakeDate extends Date{constructor(...args){super(...(args.length?args:[clock.now]));}static now(){return clock.now;}}
   const ctx={window:{scrollTo(){},confirm(){return true}},Date:FakeDate,document:{getElementById:element,querySelector:element,addEventListener:(type,fn)=>listeners[type]=fn},localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,value),removeItem:key=>storage.delete(key)},setInterval:fn=>{intervals.set(++seq,fn);return seq;},clearInterval:id=>intervals.delete(id)};
   vm.createContext(ctx);
-  for(const file of ['questions.js','extra-questions.js','learning-content.js','question-revisions.js','lesson-overviews.js','learning-core.js','app.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist',file),'utf8'),ctx,{filename:file});
+  for(const file of ['questions.js','extra-questions.js','learning-content.js','question-revisions.js','lesson-overviews.js','learning-core.js','answer-explanations.js','app.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist',file),'utf8'),ctx,{filename:file});
   return {ctx,element,listeners,intervals,click:(action,extra={})=>listeners.click({target:{closest:()=>({dataset:{action,...extra}})}}),change:(id,value)=>listeners.change({target:{id,value,matches(){return false;}}}),saved:()=>JSON.parse(storage.get('phase1-study-v2')),html:()=>element('app').innerHTML};
 }
 let ui=boot();
@@ -40,8 +40,10 @@ assert.match(ui.html(),/Luyện tập theo chủ đề/);ui.click('begin-practic
 let state=ui.saved(),s=state.runs[state.activeRun],q=all.find(q=>q.id===s.questionIds[0]);
 assert.equal(s.questionIds.length,3);
 assert.ok(!ui.html().includes(q.why),'Không mở giải thích trước khi kiểm tra');
+assert.ok(!ui.html().includes('Đáp án đúng:'));
 ui.click('choose',{choice:'1'});ui.click('check-answer');
-assert.match(ui.html(),/CẦN ÔN/);assert.ok(ui.html().includes(q.why));
+assert.match(ui.html(),/CẦN ÔN/);assert.match(ui.html(),/Đáp án đúng:/);assert.match(ui.html(),/1\. Bản chất kiến thức/);assert.match(ui.html(),/Ghi nhớ:/);
+assert.ok(ui.html().includes(`Đáp án đúng: ${ui.ctx.window.P1Explanations.letter(q,s.id,q.answer)} —`));
 assert.equal(ui.saved().reviews[q.id].wrong,true);
 ui.click('choose',{choice:'0'});assert.equal(ui.saved().runs[s.id].answers[q.id].choice,1,'Khóa đáp án đã kiểm tra');
 ui.click('bookmark',{qid:q.id});assert.equal(ui.saved().reviews[q.id].manual,true);
@@ -51,9 +53,10 @@ for(const i of multi.answers)ui.click('choose',{choice:String(i)});
 ui.click('check-answer');assert.match(ui.html(),/>ĐÚNG ·/);
 ui.click('goto',{index:'2'});const essay=all.find(q=>q.id===s.questionIds[2]);
 assert.match(ui.html(),/Hướng dẫn viết/);assert.ok(!ui.html().includes(essay.sample));
+assert.ok(!ui.html().includes(essay.guide.verify),'Không mở lời giải tự luận qua gợi ý trước nộp');
 ui.click('insert-template');ui.click('check-answer');assert.match(ui.html(),/Hãy viết hoặc chọn/);
 ui.listeners.input({target:{id:'essay-answer',value:'Tôi kiểm dữ kiện, thực thi theo quyền, đo lại và ghi bằng chứng.'}});
-ui.click('check-answer');assert.ok(ui.html().includes(essay.sample));
+ui.click('check-answer');assert.match(ui.html(),/Hướng trả lời tham khảo/);assert.match(ui.html(),/2\. Ví dụ thực tế/);assert.match(ui.html(),/Ghi nhớ:/);
 assert.equal(ui.saved().reviews[essay.id].essayPending,true);
 for(let i=0;i<essay.rubric.length;i++)ui.listeners.change({target:{dataset:{qid:essay.id,rubric:String(i)},checked:true,matches(){return true;}}});
 assert.equal(ui.saved().reviews[essay.id].essayPending,false);
@@ -75,7 +78,7 @@ assert.equal(ui.saved().cards[`card-${essay.id}`].due,clock.now+86400000);
 ui.click('exam-hub');ui.change('scope-day','all');
 ui.element('exam-count').value='5';ui.element('exam-essays').value='1';ui.element('exam-minutes').value='1';ui.click('begin-exam');
 state=ui.saved();s=state.runs[state.activeRun];assert.equal(s.questionIds.length,6);
-assert.ok(!ui.html().includes('Vì sao:</strong>'));assert.ok(!ui.html().includes('Hướng dẫn viết'));
+assert.ok(!ui.html().includes('Đáp án đúng:'));assert.ok(!ui.html().includes('Bản chất kiến thức'));assert.ok(!ui.html().includes('Hướng dẫn viết'));
 const deadline=s.deadline;ui.click('choose',{choice:'0'});
 ui=boot();ui.click('resume',{id:s.id});assert.equal(ui.saved().runs[s.id].deadline,deadline);
 assert.equal(ui.intervals.size,1,'Chỉ một đồng hồ hoạt động');

@@ -40,7 +40,8 @@ Index tạo danh mục trang và checksum; validator kiểm cấu trúc, đáp �
 - **Lịch sử trước nâng cấp:** ID và định nghĩa cũ được giữ để chấm đúng lượt cũ; luyện lại dùng câu mới. Không chuyển đáp án hoặc trạng thái đã nhớ của câu cũ thành điểm cho câu mới.
 - **Tổng quan kiến thức từng bài (đủ 28 bài):** từ trang chủ bấm “Tổng quan bài” hoặc chọn bài ở sidebar. Phần này gồm bản chất, mục tiêu học, luồng 5 bước bấm được kèm giải thích/đầu ra, Must know / Should know / Nice to know, ví dụ xuyên suốt, điểm dễ nhầm và câu hỏi tự giải thích có gợi ý. “Luyện ý này” mở đúng chủ đề; thẻ “Chủ đề luyện tập” giữ toàn bộ danh sách chủ đề của bài. Nội dung nằm trong `dist/lesson-overviews.js`; không tự đánh dấu đã hiểu hay cộng điểm.
 - **Luyện theo chủ đề:** lọc bài, chủ đề và dạng câu. Trắc nghiệm mở giải thích ngay sau khi bấm kiểm tra; đáp án đã kiểm tra được khóa trong lượt đó.
-- **Hướng dẫn tự luận:** hiểu yêu cầu → gợi ý dàn ý → chèn khung để tự viết. Sau khi thử trả lời, mở bài mẫu và checklist; có thể sửa lại bài khi luyện tập.
+- **Lời giải sau khi nộp:** mở đầu bằng đáp án và chữ cái khớp thứ tự đang hiển thị, sau đó là bản chất, ví dụ, điểm dễ nhầm khi có và câu ghi nhớ. Có chú giải thuật ngữ và công thức/thay số cho bài tính. [Phạm vi và nguyên tắc](docs/answer-explanations.md).
+- **Hướng dẫn tự luận:** hiểu yêu cầu → khung lập luận chung → chèn khung để tự viết. Sau khi nộp câu trả lời, mở hướng trả lời tham khảo và checklist; có thể sửa lại bài khi luyện tập.
 - **Flashcard:** đáp án ẩn trước khi mở. “Chưa nhớ” đưa câu vào hàng đợi; “Đã nhớ” hẹn ôn sau 1, 3, 7, 14 và 30 ngày. Có bộ lọc thẻ đến hạn.
 - **Thi thử:** chọn phạm vi, số câu trắc nghiệm/tự luận và thời lượng. Rút ngẫu nhiên luân phiên chủ đề; giữ đáp án và hướng dẫn đến lúc nộp. Hết giờ tự nộp, kể cả khi vừa mở lại trang sau deadline. Đề là một mẫu của ngân hàng, không kiểm hết mọi chủ đề trong một lượt.
 - **Câu cần ôn:** tổng hợp câu sai, câu bỏ trống trong đề, tự luận chưa tự xác nhận đủ ý, thẻ chưa nhớ và câu chủ động lưu. Có thể luyện lại từng câu hoặc toàn bộ danh sách đang lọc.
@@ -55,6 +56,7 @@ Từ thư mục `phase1-quiz-site`:
 node --check dist/app.js
 node --check dist/learning-content.js
 node --check dist/learning-core.js
+node scripts/validate-explanations.cjs
 node scripts/validate-content.cjs
 node scripts/audit-sources.cjs
 node scripts/smoke-ui.cjs
